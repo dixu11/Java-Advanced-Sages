@@ -17,19 +17,19 @@ public class Functions {
     /** a) Predykat: kwota zamówienia jest WIĘKSZA niż threshold. */
     public static Predicate<Order> moreExpensiveThan(double threshold) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return o -> o.amount() > threshold;
     }
 
     /** b) Predykat: zamówienie z podanego miasta. */
     public static Predicate<Order> fromCity(String city) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return o -> o.city().equals(city);
     }
 
     /** c) Predykat: zamówienie anulowane (status CANCELLED). */
     public static Predicate<Order> cancelled() {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return o -> o.status() == Order.Status.CANCELLED;
     }
 
     /**
@@ -38,7 +38,7 @@ public class Functions {
      */
     public static Predicate<Order> goodOrders(double threshold, String city) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return moreExpensiveThan(threshold).and(fromCity(city)).and(Predicate.not(cancelled()));
     }
 
     /**
@@ -48,7 +48,7 @@ public class Functions {
     public static List<String> report(List<Order> orders, Predicate<Order> filter,
                                       Function<Order, String> format) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return orders.stream().filter(filter).map(format).toList();
     }
 
     /**
@@ -57,7 +57,8 @@ public class Functions {
      */
     public static Function<Order, String> customerInUpperCase() {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        Function<Order, String> customer = Order::customer;
+        return customer.andThen(String::toUpperCase);
     }
 
     /**
@@ -66,6 +67,7 @@ public class Functions {
      */
     public static <T, R> Function<T, R> memoize(Function<T, R> function) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        Map<T, R> cache = new HashMap<>();
+        return argument -> cache.computeIfAbsent(argument, function);
     }
 }
