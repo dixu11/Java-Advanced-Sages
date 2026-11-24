@@ -1,0 +1,25 @@
+id;customer;city;category;amount;date;status
+1;Anna Kowalska;Warszawa;Książki;120.50;2026-01-05;SHIPPED
+2;Jan Nowak;Kraków;Elektronika;2499.00;2026-01-07;PAID
+3;Ewa Wiśniewska;Gdańsk;Dom;349.90;2026-01-09;SHIPPED
+4;Piotr Zieliński;Warszawa;Elektronika;899.00;2026-01-12;CANCELLED
+5;Anna Kowalska;Warszawa;Dom;75.00;2026-01-15;SHIPPED
+6;Marek Lewandowski;Poznań;Sport;560.00;2026-01-18;NEW
+7;Kasia Wójcik;Kraków;Książki;45.90;2026-01-20;SHIPPED
+8;Jan Nowak;Kraków;Sport;1200.00;2026-01-22;PAID
+9;Ola Kamińska;Wrocław;Elektronika;3299.00;2026-01-25;SHIPPED
+10;Tomasz Dąbrowski;Warszawa;Książki;89.00;2026-01-28;NEW
+11;Ewa Wiśniewska;Gdańsk;Elektronika;1599.00;2026-02-02;PAID
+12;Marek Lewandowski;Poznań;Dom;230.00;2026-02-04;CANCELLED
+13;Ola Kamińska;Wrocław;Książki;64.50;2026-02-06;SHIPPED
+14;Piotr Zieliński;Warszawa;Sport;410.00;2026-02-09;SHIPPED
+15;Kasia Wójcik;Kraków;Dom;1890.00;2026-02-11;PAID
+16;Anna Kowalska;Warszawa;Elektronika;5400.00;2026-02-14;SHIPPED
+17;Tomasz Dąbrowski;Warszawa;Dom;150.00;2026-02-17;SHIPPED
+18;Jan Nowak;Kraków;Książki;39.99;2026-02-19;CANCELLED
+19;Ola Kamińska;Wrocław;Sport;780.00;2026-02-22;NEW
+20;Ewa Wiśniewska;Gdańsk;Książki;99.00;2026-02-25;SHIPPED
+21;Marek Lewandowski;Poznań;Elektronika;2150.00;2026-03-01;PAID
+22;Kasia Wójcik;Kraków;Sport;320.00;2026-03-03;SHIPPED
+23;Piotr Zieliński;Warszawa;Dom;640.00;2026-03-06;NEW
+24;Tomasz Dąbrowski;Warszawa;Elektronika;1299.00;2026-03-09;SHIPPED

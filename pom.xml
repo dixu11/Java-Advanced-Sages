@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>pl.sages.jext</groupId>
+    <artifactId>jext-exercises</artifactId>
+    <version>1.0</version>
+    <name>Zaawansowane aspekty języka Java - ćwiczenia</name>
+
+    <properties>
+        <maven.compiler.release>25</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- Profil "rozwiazania" podmienia katalog źródeł na rozwiazania/src/main/java -->
+        <sources.dir>src/main/java</sources.dir>
+
+        <!-- Klasa do uruchomienia przez: mvn compile exec:exec -Dmain=pl.sages.jext.... -->
+        <main>pl.sages.jext.ch0.setup.Start</main>
+
+        <junit.version>5.14.4</junit.version>
+        <lombok.version>1.18.48</lombok.version>
+        <mapstruct.version>1.6.3</mapstruct.version>
+        <jackson.version>2.23.0</jackson.version>
+        <classgraph.version>4.8.200</classgraph.version>
+        <jandex.version>3.2.7</jandex.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.classgraph</groupId>
+            <artifactId>classgraph</artifactId>
+            <version>${classgraph.version}</version>
+        </dependency>
+
+        <dependency>
+            <!-- Jandex: przykład ze slajdu 63 (indeks adnotacji bez ładowania klas) -->
+            <groupId>io.smallrye</groupId>
+            <artifactId>jandex</artifactId>
+            <version>${jandex.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>${sources.dir}</sourceDirectory>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.14.1</version>
+                <configuration>
+                    <release>25</release>
+                    <!-- Od JDK 23 javac nie uruchamia sam procesorów adnotacji z classpath:
+                         Lombok i MapStruct muszą być wskazane tutaj. -->
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok-mapstruct-binding</artifactId>
+                            <version>0.2.0</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <!-- Indeks META-INF/jandex.idx dla przykładu ze slajdu 63. Faza compile (zamiast domyślnej
+                     process-classes), żeby indeks był też po "mvn compile exec:exec". -->
+                <groupId>io.smallrye</groupId>
+                <artifactId>jandex-maven-plugin</artifactId>
+                <version>${jandex.version}</version>
+                <executions>
+                    <execution>
+                        <id>make-index</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jandex</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.6</version>
+                <configuration>
+                    <argLine>--enable-native-access=ALL-UNNAMED</argLine>
+                    <!-- Raport w konsoli: każdy test osobno, czytelnie po polsku (@DisplayName) -->
+                    <trimStackTrace>true</trimStackTrace>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <executable>java</executable>
+                    <arguments>
+                        <argument>--enable-native-access=ALL-UNNAMED</argument>
+                        <argument>-classpath</argument>
+                        <classpath/>
+                        <argument>${main}</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <!-- Tylko dla trenera: mvn clean test -Prozwiazania -->
+        <profile>
+            <id>rozwiazania</id>
+            <properties>
+                <sources.dir>rozwiazania/src/main/java</sources.dir>
+            </properties>
+            <build>
+                <directory>${project.basedir}/target-rozwiazania</directory>
+            </build>
+        </profile>
+    </profiles>
+</project>
