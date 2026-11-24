@@ -13,12 +13,8 @@ public interface ReportMapper {
     ReportMapper INSTANCE = Mappers.getMapper(ReportMapper.class);
 
     // TODO: mapowanie raportu do DTO.
-    default ReportDto toDto(Report report) {
-        throw new UnsupportedOperationException("TODO");
-    }
+    ReportDto toDto(Report report);
 
     // TODO: bezpieczny DTO zamówienia, tylko id, klient i kwota.
-    default OrderDto toSafeOrderDto(Order order) {
-        throw new UnsupportedOperationException("TODO");
-    }
+    OrderDto toSafeOrderDto(Order order);
 }
