@@ -10,10 +10,10 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 /**
- * Slajdy 85-88: czysta funkcja, lambdy i interfejsy funkcyjne, kontekst lambdy (efektywnie finalne zmienne),
+ * Slajdy 87-90: czysta funkcja, lambdy i interfejsy funkcyjne, kontekst lambdy (efektywnie finalne zmienne),
  * referencje do metod.
  * <p>
- * Slajd 88: port 0 zamiast 8080 (system wybiera wolny port, przykład nie padnie na zajętym porcie).
+ * Slajd 90: port 0 zamiast 8080 (system wybiera wolny port, przykład nie padnie na zajętym porcie).
  * {@code ServerSocket::getLocalPort} to referencja do metody instancji przez nazwę klasy (obiekt przychodzi
  * jako argument), a nie metoda statyczna; slajd podpisuje ją „statyczna referencja”.
  * <p>
@@ -21,14 +21,14 @@ import java.util.function.Supplier;
  */
 public class LambdasAndReferences {
 
-    // --- slajd 85 ---
+    // --- slajd 87 ---
     record Item(String name, int price) {}
 
     static int total(List<Item> items) {
         return items.stream().mapToInt(Item::price).sum();
     }
 
-    // --- slajd 86 ---
+    // --- slajd 88 ---
     @FunctionalInterface
     public interface Rangeable {
         int rangeAttack(int speed);
@@ -37,7 +37,7 @@ public class LambdasAndReferences {
         String toString();
     }
 
-    static int counter = 0; // slajd 87: pole statyczne, lambda może je zmieniać
+    static int counter = 0; // slajd 89: pole statyczne, lambda może je zmieniać
 
     public static void main(String[] args) throws IOException {
         var items = List.of(new Item("Book", 40), new Item("Pen", 5));
@@ -58,7 +58,7 @@ public class LambdasAndReferences {
         System.out.println("53: attack(5) = " + attack.rangeAttack(5) + ", " + alwaysTrue.get() + ", " + p1.test("javac")
                 + ", " + p2.test("kotlin") + ", " + p3.test("java", "javadoc") + ", " + bothStartsWithJava.test("java", "c"));
 
-        // --- slajd 87 ---
+        // --- slajd 89 ---
         int local = 10;            // efektywnie finalna: nikt jej nie zmienia
         Function<Integer, Integer> addLocal = x -> {
             counter++;             // pole statyczne: wolno
@@ -67,7 +67,7 @@ public class LambdasAndReferences {
         // lokalna++;              // błąd kompilacji: lokalna przestałaby być efektywnie finalna
         System.out.println("54: addLocal(5) = " + addLocal.apply(5) + ", pole po wywołaniu = " + counter);
 
-        // --- slajd 88 ---
+        // --- slajd 90 ---
         try (ServerSocket server = new ServerSocket(0)) {
             // referencja do metody instancji przez nazwę klasy: obiekt przychodzi jako argument
             Function<ServerSocket, Integer> getLocalPortStatic = ServerSocket::getLocalPort;

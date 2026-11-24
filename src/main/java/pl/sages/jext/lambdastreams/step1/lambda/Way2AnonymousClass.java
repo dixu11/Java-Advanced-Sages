@@ -1,7 +1,7 @@
 package pl.sages.jext.lambdastreams.step1.lambda;
 
 /**
- * Krok 1, Sposób II: anonimowe klasy.
+ * Krok 1, Sposób II: anonimowe klasy (Comarch 2025, FunkcyjneDemo).
  * Ten sam abstrakcyjny Button co w Sposobie I, ale bez osobnej klasy na każdy przycisk.
  * <p>
  * Uruchomienie: {@code mvn compile exec:exec -Dmain=pl.sages.jext.lambdastreams.step1.lambda.Way2AnonymousClass}

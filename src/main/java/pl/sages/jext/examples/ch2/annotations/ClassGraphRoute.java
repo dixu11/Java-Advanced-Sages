@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Slajd 60: wyszukanie klas z adnotacją {@code @Route} przez ClassGraph.
  * <p>
- * Poprawki względem slajdu: ClassGraph nie ma {@code enableClasspath()} ani
+ * Poprawki względem slajdu (dziennik błędów): ClassGraph nie ma {@code enableClasspath()} ani
  * {@code getAllAnnotationInfo(String)}; pojedynczą adnotację zwraca {@code getAnnotationInfo(String)}.
  * Pakiet {@code com.xyz} zamieniony na pakiet przykładu.
  * <p>

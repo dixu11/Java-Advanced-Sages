@@ -6,17 +6,17 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Slajdy 99-101, 110: typ niemutowalny bez rekordu, rekordy, konstruktor kompaktowy, własne {@code equals}.
+ * Slajdy 101-103, 112: typ niemutowalny bez rekordu, rekordy, konstruktor kompaktowy, własne {@code equals}.
  * <p>
- * Slajd 101 nazywa {@code Soldier { ... }} „konstruktorem bezargumentowym”, a to konstruktor kompaktowy:
- * ma te same argumenty co kanoniczny, tylko ich nie wypisujemy. Na pytanie ze slajdu 100
+ * Slajd 103 nazywa {@code Soldier { ... }} „konstruktorem bezargumentowym”, a to konstruktor kompaktowy:
+ * ma te same argumenty co kanoniczny, tylko ich nie wypisujemy (dziennik). Na pytanie ze slajdu 102
  * („czy Weapon jest niemutowalny?”) odpowiada {@code main}: rekord z mutowalnym komponentem zmienia się z zewnątrz.
  * <p>
  * Uruchomienie: {@code mvn compile exec:exec -Dmain=pl.sages.jext.examples.ch3.functional.Immutability}
  */
 public class Immutability {
 
-    // --- slajd 99 ---
+    // --- slajd 101 ---
     static final class Immutable {
         private final Integer number;
         private final String[] array;
@@ -40,7 +40,7 @@ public class Immutability {
         }
     }
 
-    // --- slajdy 100-101 ---
+    // --- slajdy 102-103 ---
     static class Weapon { // zwykła, mutowalna klasa
         int damage;
 
@@ -64,7 +64,7 @@ public class Immutability {
         }
     }
 
-    // --- slajd 110 ---
+    // --- slajd 112 ---
     public record TeamDTO(String key, String name, List<String> memberLogins, String chairmanLogin) {
         @Override
         public boolean equals(Object o) {

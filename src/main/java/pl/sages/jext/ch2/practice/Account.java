@@ -16,7 +16,5 @@ public class Account {
         this.password = password;
         this.cardNumber = cardNumber;
         this.balance = balance;
-
-
     }
 }

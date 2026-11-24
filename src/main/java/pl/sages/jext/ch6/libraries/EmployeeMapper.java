@@ -5,7 +5,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 /**
- * Pokaz MapStruct (slajdy 167-168), gotowe. Implementację tego interfejsu generuje procesor
+ * Pokaz MapStruct (slajdy 164-165), gotowe. Implementację tego interfejsu generuje procesor
  * adnotacji przy kompilacji (target/generated-sources/annotations).
  */
 @Mapper

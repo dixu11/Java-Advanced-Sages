@@ -1,7 +1,7 @@
 package pl.sages.jext.lambdastreams.step1.lambda;
 
 /**
- * Krok 1, Sposób I: zwykłe dziedziczenie abstrakcyjnych metod.
+ * Krok 1, Sposób I: zwykłe dziedziczenie abstrakcyjnych metod (Comarch 2025, FunkcyjneDemo).
  * Różne klasy konkretnych przycisków różnie zdefiniują akcję kliknięcia.
  * <p>
  * Uruchomienie: {@code mvn compile exec:exec -Dmain=pl.sages.jext.lambdastreams.step1.lambda.Way1Inheritance}

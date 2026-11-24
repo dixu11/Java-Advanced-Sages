@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Krok 3: sekcja „Stream”, zad. 1.
+ * Krok 3: arkusz „Zadania zaawansowane”, sekcja „Stream”, zad. 1 (rozwiązanie jak w grupie 120, Stream2).
  * Test: {@code NumbersTasksTest}.
  * <p>
  * Przygotuj ArrayList z 10 liczbami z przedziału 0-100.

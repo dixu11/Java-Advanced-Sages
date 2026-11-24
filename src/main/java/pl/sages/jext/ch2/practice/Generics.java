@@ -23,6 +23,7 @@ public class Generics {
      */
     public static void appendSequence(List<? super Integer> target, int count) {
         // TODO
+        throw new UnsupportedOperationException("TODO");
     }
 
     /**
@@ -31,6 +32,7 @@ public class Generics {
      */
     public static <T> void copy(List<? extends T> source, List<? super T> target) {
         // TODO
+        throw new UnsupportedOperationException("TODO");
     }
 
     /**

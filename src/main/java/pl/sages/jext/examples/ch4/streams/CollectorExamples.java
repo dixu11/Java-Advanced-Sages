@@ -13,11 +13,11 @@ import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toSet;
 
 /**
- * Slajdy 136-141: kolektory {@code groupingBy}, {@code partitioningBy}, {@code reducing}, {@code flatMapping},
- * {@code filtering}, {@code teeing}, {@code collectingAndThen} oraz strumień równoległy.
+ * Slajd 136: strumień równoległy.
+ * Wszystkie zaawansowane kolektory w tym pliku: dla chętnych, bez slajdu, poza kursem.
  * <p>
- * Poprawki: slajd 136 brak nazwy zmiennej i mieszane {@code User::group} z {@code user.getGroup()};
- * slajd 137 {@code reducing} z wartością początkową zwraca {@code Integer}, nie {@code Optional<Integer>}.
+ * Poprawki (dziennik błędów): temat uzupełniający (bez slajdu) brak nazwy zmiennej i mieszane {@code User::group} z {@code user.getGroup()};
+ * temat uzupełniający (bez slajdu) {@code reducing} z wartością początkową zwraca {@code Integer}, nie {@code Optional<Integer>}.
  * Rekord {@code User} i dane są dopisane.
  * <p>
  * Uruchomienie: {@code mvn compile exec:exec -Dmain=pl.sages.jext.examples.ch4.streams.CollectorExamples}
@@ -40,35 +40,35 @@ public class CollectorExamples {
             new User(id(4), "jan", "admin", List.of("login", "backup", "logout"), TODAY),
             new User(id(5), "ewa", "qa", List.of(), null));
 
-    // --- slajd 141 ---
+    // --- slajd 136 ---
     boolean isEligible(long n) { return n % 7 == 0; }
 
     long score(long n) { return n % 100; }
 
     public static void main(String[] args) {
-        // --- slajd 136 ---
+        // --- temat uzupełniający (bez slajdu) ---
         Map<String, Set<UUID>> lookup = users.stream().collect(Collectors.groupingBy(
                 User::group,
                 Collectors.mapping(User::id, toSet())
         ));
-        Map<Boolean, Set<UUID>> admins = users.stream().collect(Collectors.partitioningBy( // na slajdzie bez nazwy
-                user -> "admin".equals(user.group()),                                     // na slajdzie getGroup()
+        Map<Boolean, Set<UUID>> admins = users.stream().collect(Collectors.partitioningBy( // w dawnym przykładzie bez nazwy
+                user -> "admin".equals(user.group()),                                     // w dawnym przykładzie getGroup()
                 Collectors.mapping(User::id, toSet())
         ));
-        System.out.println("94: lookup = " + lookup);
-        System.out.println("94: admins = " + admins);
+        System.out.println("Dla chętnych: lookup = " + lookup);
+        System.out.println("Dla chętnych: admins = " + admins);
 
-        // --- slajd 137 ---
-        Integer logsSum = users.stream().collect( // na slajdzie Optional<Integer>
+        // --- temat uzupełniający (bez slajdu) ---
+        Integer logsSum = users.stream().collect( // w dawnym przykładzie Optional<Integer>
                 Collectors.reducing(
                         0, // wartość początkowa
                         (User user) -> user.logEntries().size(), // ekstraktor
                         Integer::sum) // operacja agregująca
         );
-        System.out.println("95: logsSum = " + logsSum + ", joining = " + users.stream().map(User::name).collect(Collectors.joining(", "))
+        System.out.println("Dla chętnych: logsSum = " + logsSum + ", joining = " + users.stream().map(User::name).collect(Collectors.joining(", "))
                 + ", counting = " + users.stream().collect(Collectors.counting()));
 
-        // --- slajd 138 ---
+        // --- temat uzupełniający (bez slajdu) ---
         Map<String, List<String>> result = users.stream()
                 .collect(Collectors.groupingBy(
                         User::group,
@@ -76,9 +76,9 @@ public class CollectorExamples {
                                 (User user) -> user.logEntries().stream(),
                                 Collectors.toList())
                 ));
-        System.out.println("96: " + result);
+        System.out.println("Dla chętnych: " + result);
 
-        // --- slajd 139 ---
+        // --- temat uzupełniający (bez slajdu) ---
         Predicate<User> loggedTodayPredicate = user -> TODAY.equals(user.lastLogin());
         Map<String, Set<UUID>> todayLoggedByUserGroup = users.stream()
                 .filter(loggedTodayPredicate)
@@ -94,10 +94,10 @@ public class CollectorExamples {
                                 )
                         )
                 ));
-        System.out.println("97: filter przed grupowaniem = " + todayLoggedByUserGroup);
-        System.out.println("97: filtering w kolektorze   = " + todayLoggedByUserGroup2 + " (grupy bez dopasowań zostają)");
+        System.out.println("Dla chętnych: filter przed grupowaniem = " + todayLoggedByUserGroup);
+        System.out.println("Dla chętnych: filtering w kolektorze   = " + todayLoggedByUserGroup2 + " (grupy bez dopasowań zostają)");
 
-        // --- slajd 140 ---
+        // --- temat uzupełniający (bez slajdu) ---
         record UserStats(long total, long neverLoggedIn) {
         }
         UserStats stats = users.stream().collect(Collectors.teeing(
@@ -110,9 +110,9 @@ public class CollectorExamples {
         String words = List.of("Java", "Kotlin", "Scala").stream()
                 .collect(Collectors.collectingAndThen(
                         Collectors.counting(), count -> "Total words: " + count));
-        System.out.println("98: " + stats + ", " + words);
+        System.out.println("Dla chętnych: " + stats + ", " + words);
 
-        // --- slajd 141 ---
+        // --- slajd 136 ---
         var self = new CollectorExamples();
         long t0 = System.nanoTime();
         long sequential = LongStream.rangeClosed(1, 10_000_000).filter(self::isEligible).map(self::score).sum();
@@ -124,7 +124,7 @@ public class CollectorExamples {
                 .map(self::score)
                 .sum();
         long t2 = System.nanoTime();
-        System.out.println("99: sekwencyjnie " + sequential + " w " + (t1 - t0) / 1_000_000 + " ms, równolegle " + total
+        System.out.println("Parallel: sekwencyjnie " + sequential + " w " + (t1 - t0) / 1_000_000 + " ms, równolegle " + total
                 + " w " + (t2 - t1) / 1_000_000 + " ms (pierwszy pomiar bez rozgrzewki, wiarygodnie mierzy JMH)");
     }
 }

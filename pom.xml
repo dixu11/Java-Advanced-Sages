@@ -14,7 +14,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <!-- Profil "rozwiazania" podmienia katalog źródeł na rozwiazania/src/main/java -->
         <sources.dir>src/main/java</sources.dir>
 
         <!-- Klasa do uruchomienia przez: mvn compile exec:exec -Dmain=pl.sages.jext.... -->
@@ -142,17 +141,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <!-- Tylko dla trenera: mvn clean test -Prozwiazania -->
-        <profile>
-            <id>rozwiazania</id>
-            <properties>
-                <sources.dir>rozwiazania/src/main/java</sources.dir>
-            </properties>
-            <build>
-                <directory>${project.basedir}/target-rozwiazania</directory>
-            </build>
-        </profile>
-    </profiles>
 </project>

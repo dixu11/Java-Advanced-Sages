@@ -1,6 +1,6 @@
 package pl.sages.jext.lambdastreams.step1.lambda;
 
-/** Sposób III, wariant z klasą implementującą interfejs. */
+/** Sposób III, wariant z klasą implementującą interfejs (SDA43, HelloAction implements ButtonAction). */
 public class HelloAction implements ButtonAction {
     @Override
     public void clickAction() {

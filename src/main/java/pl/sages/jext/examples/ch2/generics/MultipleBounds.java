@@ -3,7 +3,7 @@ package pl.sages.jext.examples.ch2.generics;
 /**
  * Slajd 74: wielokrotne ograniczenie {@code <T extends Number & Comparable<T>>}.
  * <p>
- * Poprawka względem slajdu: {@code createContainer} zwraca {@code new NumberContainer<>(object)},
+ * Poprawka względem slajdu (dziennik błędów): {@code createContainer} zwraca {@code new NumberContainer<>(object)},
  * a zmienna w użyciu ma typ {@code NumberContainer<Integer>}; na slajdzie stoi {@code Container}.
  * <p>
  * Uruchomienie: {@code mvn compile exec:exec -Dmain=pl.sages.jext.examples.ch2.generics.MultipleBounds}

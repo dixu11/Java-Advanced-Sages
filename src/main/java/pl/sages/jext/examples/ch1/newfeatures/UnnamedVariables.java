@@ -9,7 +9,7 @@ import java.util.function.BiFunction;
 /**
  * Slajd 18 (oraz slajdy 15, 17, 19): zmienne nienazwane {@code _}.
  * <p>
- * Przykłady 3 i 4 ze slajdu 18 są w wersji poprawionej: zasób tworzony
+ * Przykłady 3 i 4 ze slajdu 18 są w wersji poprawionej (dziennik błędów): zasób tworzony
  * w nawiasie try (slajd 19) i pętla z JEP 456 zamiast pętli nieskończonej.
  * <p>
  * Uruchomienie: {@code mvn compile exec:exec -Dmain=pl.sages.jext.examples.ch1.newfeatures.UnnamedVariables}

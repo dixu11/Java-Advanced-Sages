@@ -21,6 +21,6 @@ public class Validator {
     public static List<String> validate(Object object) throws IllegalAccessException {
         List<String> errors = new ArrayList<>();
         // TODO
-        return errors;
+        throw new UnsupportedOperationException("TODO");
     }
 }

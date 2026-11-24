@@ -5,9 +5,9 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 /**
- * Slajdy 92-95: funkcja wyższego rzędu, curryfikacja i memoizacja przez własny {@code CachedSupplier}.
+ * Slajdy 94-97: funkcja wyższego rzędu, curryfikacja i memoizacja przez własny {@code CachedSupplier}.
  * <p>
- * Uwaga do slajdu 95: tekst mówi o „polu statycznym”, a {@code CachedSupplier} trzyma wynik w zwykłym
+ * Uwaga do slajdu 97 (dziennik): tekst mówi o „polu statycznym”, a {@code CachedSupplier} trzyma wynik w zwykłym
  * polu obiektu. Wynik {@code null} nie jest zapamiętywany, a przy wielu wątkach wyrażenie może się policzyć
  * więcej niż raz.
  * <p>
@@ -15,14 +15,14 @@ import java.util.function.Supplier;
  */
 public class HigherOrderAndCurrying {
 
-    // --- slajd 92 ---
+    // --- slajd 94 ---
     static <T, R> List<R> applyToAll(List<T> list, Function<T, R> fn) {
         return list.stream()
                 .map(fn)
                 .toList();
     }
 
-    // --- slajd 95 ---
+    // --- slajd 97 ---
     public static class CachedSupplier<T> implements Supplier<T> {
         private final Supplier<T> expression;
         private T result; // rezultat powinien być niemutowalny dla bezpieczeństwa
@@ -54,13 +54,13 @@ public class HigherOrderAndCurrying {
         List<Integer> lengths = applyToAll(texts, String::length); // [1, 2, 3]
         System.out.println("59: " + lengths);
 
-        // --- slajd 93 ---
+        // --- slajd 95 ---
         Function<Integer, Function<Integer, Integer>> add = a -> b -> a + b;
         int sum = add.apply(2).apply(3); // 5
         Function<Integer, Integer> plusTen = add.apply(10); // „przygotowana” funkcja
         System.out.println("60: " + sum + ", plusTen(5) = " + plusTen.apply(5));
 
-        // --- slajd 95 ---
+        // --- slajd 97 ---
         Supplier<String> expensive = () -> {
             System.out.println("   61: liczę drogie wyrażenie...");
             return "wynik";

@@ -4,12 +4,12 @@ import java.math.BigDecimal;
 import java.time.YearMonth;
 
 /**
- * Ćwiczenie 6a (slajdy 98-107): wynik płatności w sklepie jako typ zapieczętowany z rekordami.
+ * Ćwiczenie 6a (slajdy 100-109): wynik płatności w sklepie jako typ zapieczętowany z rekordami.
  * <p>
  * Płatność kończy się jednym z trzech wyników, a każdy niesie inne dane: sukces ma numer transakcji
  * i kwotę, odmowa ma powód, błąd techniczny ma wyjątek. Nie ma tu pól, które przy połowie wyników są null.
  * <p>
- * TODO: zapieczętuj oba interfejsy w tym pliku (slajdy 103-105):
+ * TODO: zapieczętuj oba interfejsy w tym pliku (slajdy 105-107):
  * - PaymentResult ma pozwalać tylko na Success, Declined i Failure,
  * - DeclineReason tylko na InsufficientFunds, CardExpired i FraudSuspected.
  * Rekordy są niejawnie final, więc w nich nic nie trzeba zmieniać.
@@ -18,7 +18,7 @@ import java.time.YearMonth;
 public interface PaymentResult {
 }
 
-/** Kwota z walutą, np. 120.00 PLN. Rekord (slajd 98): pola final, equals, hashCode i toString za darmo. */
+/** Kwota z walutą, np. 120.00 PLN. Rekord (slajd 100): pola final, equals, hashCode i toString za darmo. */
 record Money(BigDecimal amount, String currency) {
 }
 
@@ -26,7 +26,7 @@ record Money(BigDecimal amount, String currency) {
 record Success(String transactionId, Money paid) implements PaymentResult {
 }
 
-/** Bank odmówił: powód odmowy to osobny typ zapieczętowany (rekord w rekordzie, slajd 113). */
+/** Bank odmówił: powód odmowy to osobny typ zapieczętowany (rekord w rekordzie, slajd 115). */
 record Declined(DeclineReason reason) implements PaymentResult {
 }
 

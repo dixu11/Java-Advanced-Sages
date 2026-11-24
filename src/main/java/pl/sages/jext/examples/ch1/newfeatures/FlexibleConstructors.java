@@ -3,7 +3,7 @@ package pl.sages.jext.examples.ch1.newfeatures;
 import java.math.BigInteger;
 
 /**
- * Slajd 20 (oraz slajdy 21, 22): elastyczne ciała konstruktorów, finalne w Javie 25 (JEP 513).
+ * Slajd 20 (oraz slajdy 21-22): elastyczne ciała konstruktorów, finalne w Javie 25 (JEP 513).
  * <p>
  * W klasie {@code A} linie z błędem kompilacji są zakomentowane: odkomentuj jedną i zobacz komunikat.
  * <p>

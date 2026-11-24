@@ -4,18 +4,18 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Slajdy 103-108, 112-113, 115: pattern matching w {@code if} i {@code switch}, wyczerpujący switch (enum, sealed),
+ * Slajdy 105-110, 114-115, 117: pattern matching w {@code if} i {@code switch}, wyczerpujący switch (enum, sealed),
  * guardy {@code when}, wzorce rekordów (także zagnieżdżone) i przykład Data Oriented Programming.
  * <p>
- * Poprawki względem slajdów: brakujące średniki na slajdach 104 (po switch expression)
- * i 67 ({@code size = "not long or empty"}). Na slajdzie 112 switch z samym guardem nie jest wyczerpujący,
+ * Poprawki względem slajdów (dziennik błędów): brakujące średniki na slajdach 106 (po switch expression)
+ * i 67 ({@code size = "not long or empty"}). Na slajdzie 114 switch z samym guardem nie jest wyczerpujący,
  * więc dopisany jest {@code default}.
  * <p>
  * Uruchomienie: {@code mvn compile exec:exec -Dmain=pl.sages.jext.examples.ch3.functional.PatternMatching}
  */
 public class PatternMatching {
 
-    // --- slajd 103 ---
+    // --- slajd 105 ---
     static String ifInstanceof(Object x) {
         if (x instanceof String string) {
             return string;
@@ -35,7 +35,7 @@ public class PatternMatching {
         return maybeString;
     }
 
-    // --- slajd 104 ---
+    // --- slajd 106 ---
     enum Axis {POSITIVE, NEGATIVE, ZERO}
 
     sealed static class Soldier permits Infantry, Cavalry {}
@@ -71,7 +71,7 @@ public class PatternMatching {
         }
     }
 
-    // --- slajd 108 ---
+    // --- slajd 110 ---
     static String sizeIf(Object string) {
         String size;
         if (string instanceof String str && str.length() > 42) {
@@ -92,7 +92,7 @@ public class PatternMatching {
         return size;
     }
 
-    // --- slajd 112 ---
+    // --- slajd 114 ---
     sealed interface Team {
         String name();
     }
@@ -112,7 +112,7 @@ public class PatternMatching {
         }
     }
 
-    // --- slajd 113 ---
+    // --- slajd 115 ---
     record Point(double x, double y) {}
     enum Color {RED, GREEN, BLUE}
     record ColoredPoint(Point p, Color c) {}
@@ -132,7 +132,7 @@ public class PatternMatching {
         }
     }
 
-    // --- slajd 115 ---
+    // --- slajd 117 ---
     sealed interface Delivery
             permits Courier, Pickup {}
 

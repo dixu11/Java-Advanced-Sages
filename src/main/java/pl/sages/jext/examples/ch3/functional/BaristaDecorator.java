@@ -4,9 +4,9 @@ import java.util.Arrays;
 import java.util.function.Function;
 
 /**
- * Slajd 121: dekorator z kawą: pojedyncza dekoracja i wiele dekoracji złożonych przez {@code reduce}.
+ * Slajd 123: dekorator z kawą: pojedyncza dekoracja i wiele dekoracji złożonych przez {@code reduce}.
  * <p>
- * Poprawka: w {@code multiDecorate} zmienna nazywa się {@code dec}, a zwracane jest
+ * Poprawka (dziennik błędów): w {@code multiDecorate} zmienna nazywa się {@code dec}, a zwracane jest
  * {@code reducedDecorations}; tu jedna nazwa. Typy {@code CoffeeMaker}, {@code BlackCoffeeMaker},
  * {@code AddMilkDecorator}, {@code AddSugarCoffeeMaker} i {@code MilkCarton} nie są na slajdzie pokazane, więc są dopisane.
  * <p>
@@ -33,7 +33,7 @@ public class BaristaDecorator {
         public String makeCoffee() { return coffeeMaker.makeCoffee() + " + cukier"; }
     }
 
-    // --- slajd 121 ---
+    // --- slajd 123 ---
     public interface Barista {
         // aplikuje pojedynczą dekorację
         static CoffeeMaker decorate(

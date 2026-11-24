@@ -1,7 +1,7 @@
 package pl.sages.jext.lambdastreams.step1.lambda;
 
 /**
- * Krok 2: równanie od klasy anonimowej do lambdy.
+ * Krok 2: równanie od klasy anonimowej do lambdy (comarch-kompedium LambdaExpr, mnożenie z grupy 120).
  * Kolejność: klasa anonimowa → lambda z typami i klamrą → lambda skrócona → lambda przekazana do metody
  * → (nowe) referencja do metody.
  * <p>

@@ -9,8 +9,8 @@ import java.util.StringJoiner;
  * Metoda describe() jest gotowa: robi z obiektu tekst do logów, np. Account[login=jan, password=****, ...],
  * i maskuje pola oznaczone adnotacją @Mask. Tej adnotacji jeszcze nie ma: zrób ją.
  *
- * 1. Odkomentuj metodę describe(): usuń dwie linie ze znacznikami komentarza nad nią i pod nią,
- *    a potem zaślepkę na dole klasy. Kod przestanie się kompilować, bo nie ma typu Mask.
+ * 1. Usuń throw w describe() i odkomentuj rozwiązanie pod nim przez Ctrl+/.
+ *    Kod przestanie się kompilować, bo nie ma jeszcze typu Mask (plik zawiera tylko komentarz).
  * 2. Przeczytaj metodę i utwórz w tym pakiecie adnotację Mask tak, żeby kod się skompilował
  *    (jaki element musi mieć i jakiego typu, skoro kod wywołuje mask.keepLast()?).
  * 3. W klasie Account oznacz pola, których nie wolno pokazać w logach: hasło w całości,
@@ -20,25 +20,7 @@ import java.util.StringJoiner;
  */
 public class Masking {
 
-    /*
     public static String describe(Object object) throws IllegalAccessException {
-        StringJoiner description = new StringJoiner(", ", object.getClass().getSimpleName() + "[", "]");
-        for (Field field : object.getClass().getDeclaredFields()) {
-            field.setAccessible(true);
-            String value = String.valueOf(field.get(object));
-            Mask mask = field.getAnnotation(Mask.class);
-            if (mask != null) {
-                int keepLast = Math.min(mask.keepLast(), value.length());
-                value = "****" + value.substring(value.length() - keepLast);
-            }
-            description.add(field.getName() + "=" + value);
-        }
-        return description.toString();
-    }
-    */
-    
-    // ZAŚLEPKA: usuń ją w kroku 1
-    public static String describe(Object object) throws IllegalAccessException {
-        return "TODO: krok 1";
+        throw new UnsupportedOperationException("TODO");
     }
 }

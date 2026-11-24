@@ -1,7 +1,7 @@
 package pl.sages.jext.lambdastreams.step1.lambda;
 
 /**
- * Krok 1, Sposób IV: współczesny - wyrażenia lambda i interfejsy funkcyjne.
+ * Krok 1, Sposób IV: współczesny - wyrażenia lambda i interfejsy funkcyjne (Comarch 2025, FunkcyjneDemo).
  * <p>
  * Uruchomienie: {@code mvn compile exec:exec -Dmain=pl.sages.jext.lambdastreams.step1.lambda.Way4Lambda}
  */

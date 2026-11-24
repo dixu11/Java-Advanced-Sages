@@ -13,19 +13,19 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 /**
- * Slajdy 124-129: Optional w łańcuchu, Optional jako strumień, wyjątki w lambdach: wrapper {@code tryFunction},
+ * Slajdy 126-131: Optional w łańcuchu, Optional jako strumień, wyjątki w lambdach: wrapper {@code tryFunction},
  * {@code Either} i monada {@code Try}.
  * <p>
- * Dopisane, czego slajdy nie pokazują: {@code Content}, {@code loadFromDB}, typy ze slajdu 125 oraz pominięte
- * na slajdzie 129 konstruktory i {@code Try.of}. {@code Files::readString} rzuca {@code IOException}, więc
+ * Dopisane, czego slajdy nie pokazują: {@code Content}, {@code loadFromDB}, typy ze slajdu 127 oraz pominięte
+ * na slajdzie 131 konstruktory i {@code Try.of}. {@code Files::readString} rzuca {@code IOException}, więc
  * {@code Try.of} przyjmuje {@code TryFunction} i zamienia wyjątek sprawdzany na {@code UncheckedIOException}.
- * {@code log.error(e)} ze slajdu 127 zastępuje {@code System.err.println}, bo projekt nie ma loggera.
+ * {@code log.error(e)} ze slajdu 129 zastępuje {@code System.err.println}, bo projekt nie ma loggera.
  * <p>
  * Uruchomienie: {@code mvn compile exec:exec -Dmain=pl.sages.jext.examples.ch4.streams.OptionalAndExceptions}
  */
 public class OptionalAndExceptions {
 
-    // --- slajd 124 ---
+    // --- slajd 126 ---
     record Content(String id, boolean isPublished) {}
 
     static final Map<String, Content> DATABASE = Map.of("news", new Content("news", true), "draft", new Content("draft", false));
@@ -44,12 +44,12 @@ public class OptionalAndExceptions {
                 .filter(Content::isPublished);
     }
 
-    // --- slajd 125 ---
+    // --- slajd 127 ---
     record User(String name, boolean isActive) {}
     record Group(Optional<User> admin) {}
     record Permissions(Group group, boolean isEmpty) {}
 
-    // --- slajd 127 ---
+    // --- slajd 129 ---
     @FunctionalInterface
     public interface TryFunction<T, R> {
         R apply(T t) throws Exception;
@@ -74,7 +74,7 @@ public class OptionalAndExceptions {
         };
     }
 
-    // --- slajd 128 ---
+    // --- slajd 130 ---
     public sealed interface Either<L, R> permits Left, Right {}
     public record Left<L, R>(L value) implements Either<L, R> {}
     public record Right<L, R>(R value) implements Either<L, R> {}
@@ -87,7 +87,7 @@ public class OptionalAndExceptions {
         }
     }
 
-    // --- slajd 129 ---
+    // --- slajd 131 ---
     public static class Try<T, R> implements Function<T, Optional<R>> {
         private final Function<T, R> fn;
         private final Function<RuntimeException, R> failureFn;

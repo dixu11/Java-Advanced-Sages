@@ -7,12 +7,12 @@ import java.util.concurrent.TimeoutException;
 import java.util.stream.Collectors;
 
 /**
- * Ćwiczenie 6b-6e (slajdy 103-115): switch z wzorcami rekordów, zagnieżdżenia, guardy (when) i zmienne nienazwane (_).
+ * Ćwiczenie 6b-6e (slajdy 105-117): switch z wzorcami rekordów, zagnieżdżenia, guardy (when) i zmienne nienazwane (_).
  * <p>
  * Jeden wynik płatności, a każdy odbiorca robi z nim co innego: klient dostaje komunikat (6b),
  * magazyn i dział płatności decyzję, co dalej (6c), a analityk raport odmów (6e).
  * Każda z tych operacji to osobny switch, a rekordy z PaymentResult.java zostają nietknięte.
- * Na tym polega problem ekspresji ze slajdu 107: przy stałych przypadkach i przybywających operacjach
+ * Na tym polega problem ekspresji ze slajdu 109: przy stałych przypadkach i przybywających operacjach
  * sealed + switch rozszerza się łatwiej niż metoda w każdej klasie.
  * <p>
  * Uwaga: dopóki interfejsy w PaymentResult.java nie są sealed (6a), switch bez default się nie skompiluje
@@ -27,8 +27,8 @@ public class Payments {
     public enum Action { SHIP, ASK_FOR_ANOTHER_CARD, RETRY_LATER, MANUAL_REVIEW }
 
     /**
-     * 6b) Komunikat dla klienta. Jedno wyrażenie switch, BEZ default, z wzorcami rekordów (slajdy 112-113)
-     * i guardem when (slajd 108). Kwoty wypisuj przez {@code amount.toPlainString()} (np. 120.00),
+     * 6b) Komunikat dla klienta. Jedno wyrażenie switch, BEZ default, z wzorcami rekordów (slajdy 114-115)
+     * i guardem when (slajd 110). Kwoty wypisuj przez {@code amount.toPlainString()} (np. 120.00),
      * datę przez zwykłe sklejenie z tekstem (YearMonth wypisuje się jako 2026-10).
      * <ul>
      * <li>Success z kwotą większą niż 10000 → "Płatność przyjęta, czeka na potwierdzenie: 12000.00 PLN"
@@ -62,7 +62,7 @@ public class Payments {
      *     (we wzorcu rekordu można podać podtyp składowej: {@code case Failure(TimeoutException _)}),
      *     każde inne Failure → MANUAL_REVIEW.</li>
      * </ul>
-     * Kolejność ma znaczenie (slajd 108): szczególny przypadek przed ogólnym. Gdy {@code case Failure _}
+     * Kolejność ma znaczenie (slajd 110): szczególny przypadek przed ogólnym. Gdy {@code case Failure _}
      * stanie przed {@code case Failure(TimeoutException _)}, kompilator zgłosi, że drugi case jest zdominowany
      * (jak String po CharSequence: ogólniejszy wzorzec połyka wszystko, co przyszłoby po nim).
      */
@@ -81,7 +81,7 @@ public class Payments {
     // 3. Obsłuż Pending w obu switchach: klient dostaje "Czekamy na potwierdzenie banku", a akcja to RETRY_LATER.
 
     /**
-     * 6e) Dla chętnych (slajdy 130-141): raport odmów. Dla wyników typu Declined policz, ile było odmów
+     * 6e) Dla chętnych (slajdy 132-136): raport odmów. Dla wyników typu Declined policz, ile było odmów
      * z jakiego powodu. Klucz mapy daje switch po DeclineReason:
      * "brak środków" (InsufficientFunds), "karta wygasła" (CardExpired), "podejrzenie oszustwa" (FraudSuspected).
      * Powody, których nie było, nie pojawiają się w mapie; Success i Failure są pomijane.

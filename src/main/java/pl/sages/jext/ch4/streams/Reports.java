@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * Ćwiczenie 7 (slajdy 130-140): NIO i kolektory na pliku src/main/resources/orders.csv.
+ * Ćwiczenie 7 (dla chętnych, bez slajdu): NIO i kolektory poza kursem, na pliku src/main/resources/orders.csv.
  * Każda metoda to 1-3 linijki strumienia.
  */
 public class Reports {
@@ -21,7 +21,7 @@ public class Reports {
     }
 
     /**
-     * a) Wczytaj zamówienia z pliku CSV (slajd 133). Pierwsza linia to nagłówek: pomiń ją.
+     * a) Wczytaj zamówienia z pliku CSV. Pierwsza linia to nagłówek: pomiń ją.
      * Do zamiany linii na rekord jest gotowe Order.fromCsv. Pamiętaj o zamknięciu strumienia
      * (try-with-resources), bo Files.lines trzyma otwarty plik.
      */
@@ -30,7 +30,7 @@ public class Reports {
         throw new UnsupportedOperationException("TODO");
     }
 
-    /** b) Liczba zamówień w każdym mieście (groupingBy + counting, slajd 136). */
+    /** b) Liczba zamówień w każdym mieście (groupingBy + counting). */
     public static Map<String, Long> countByCity(List<Order> orders) {
         // TODO
         throw new UnsupportedOperationException("TODO");
@@ -44,21 +44,21 @@ public class Reports {
 
     /**
      * d) Podziel zamówienia na dwie grupy: true = kwota większa niż threshold, false = reszta
-     * (partitioningBy, slajd 136).
+     * (partitioningBy).
      */
     public static Map<Boolean, List<Order>> partitionByAmount(List<Order> orders, double threshold) {
         // TODO
         throw new UnsupportedOperationException("TODO");
     }
 
-    /** e) Średnia kwota wszystkich zamówień, 0 dla pustej listy (mapToDouble + average, slajd 130). */
+    /** e) Średnia kwota wszystkich zamówień, 0 dla pustej listy (mapToDouble + average). */
     public static double averageAmount(List<Order> orders) {
         // TODO
         throw new UnsupportedOperationException("TODO");
     }
 
     /**
-     * f) Najmniejsza i największa kwota w JEDNYM przejściu strumienia: Collectors.teeing (slajd 140)
+     * f) Dla chętnych, bez slajdu: najmniejsza i największa kwota w JEDNYM przejściu strumienia: Collectors.teeing
      * z dwoma kolektorami (summarizingDouble też by zadziałał, ale tu ćwiczymy teeing). Podpowiedź:
      * teeing(mapping(Order::amount, minBy(...)), mapping(Order::amount, maxBy(...)), (min, max) -> ...).
      * Możesz założyć, że lista nie jest pusta.

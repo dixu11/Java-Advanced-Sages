@@ -5,7 +5,7 @@ import lombok.Value;
 import lombok.With;
 
 /**
- * Pokaz Lomboka (slajdy 162-166), gotowe. Test środowiska sprawdza, że Lombok działa,
+ * Pokaz Lomboka (slajdy 159-163), gotowe. Test środowiska sprawdza, że Lombok działa,
  * czyli że procesor adnotacji jest poprawnie podpięty w pom.xml (annotationProcessorPaths).
  */
 @Value

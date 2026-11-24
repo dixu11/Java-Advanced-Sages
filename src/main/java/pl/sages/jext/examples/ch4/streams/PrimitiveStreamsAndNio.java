@@ -18,10 +18,10 @@ import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 /**
- * Slajdy 130-135: strumienie prymitywne, NIO ({@code walk}, {@code find}, {@code lines}), {@code mapMulti}
+ * Slajdy 132-135: strumienie prymitywne, NIO ({@code walk}, {@code find}, {@code lines}), {@code mapMulti}
  * i nietypowe sposoby tworzenia strumieni.
  * <p>
- * Poprawka: slajd 130 {@code .avg()} nie istnieje, jest {@code .average()} ({@code OptionalDouble}).
+ * Poprawka (dziennik błędów): slajd 132 {@code .avg()} nie istnieje, jest {@code .average()} ({@code OptionalDouble}).
  * NIO działa na folderze {@code src/main/java/pl/sages/jext/examples} (uruchamiaj z folderu projektu).
  * <p>
  * Uruchomienie: {@code mvn compile exec:exec -Dmain=pl.sages.jext.examples.ch4.streams.PrimitiveStreamsAndNio}
@@ -29,7 +29,7 @@ import java.util.stream.Stream;
 public class PrimitiveStreamsAndNio {
 
     public static void main(String[] args) throws IOException {
-        // --- slajd 130 ---
+        // --- slajd 132 ---
         IntSummaryStatistics stats = IntStream.of(1, 2, 3, 4, 5).summaryStatistics();
         var avg = stats.getAverage();
         var max = stats.getMax();
@@ -43,7 +43,7 @@ public class PrimitiveStreamsAndNio {
         var averageYear = Stream.of(date1, date2, date3, date4).mapToInt(LocalDate::getYear).average(); // na slajdzie avg()
         System.out.println("88: averageYear = " + averageYear);
 
-        // --- slajd 132 ---
+        // --- slajd 134 ---
         Path start = Path.of("src/main/java/pl/sages/jext/examples");
         if (!Files.isDirectory(start)) {
             start = Path.of(".");
@@ -65,7 +65,7 @@ public class PrimitiveStreamsAndNio {
             System.out.println("obsługa sytuacji wyjątkowej: " + e);
         }
 
-        // --- slajd 133 ---
+        // --- slajd 135 ---
         Path location = Path.of("pom.xml");
         if (Files.exists(location)) {
             try (Stream<String> stream = Files.lines(location)) {
@@ -74,7 +74,7 @@ public class PrimitiveStreamsAndNio {
             }
         }
 
-        // --- slajd 134 ---
+        // --- temat uzupełniający (bez slajdu) ---
         List<Integer> divisors = List.of(10, 15, 21).stream()
                 .<Integer>mapMulti((number, consumer) -> { // consumer reprezentuje kolejny etap strumienia
                     for (int i = 1; i <= number; i++) {
@@ -85,7 +85,7 @@ public class PrimitiveStreamsAndNio {
                 }).collect(Collectors.toList());
         System.out.println("92: dzielniki 10, 15, 21: " + divisors);
 
-        // --- slajd 135 ---
+        // --- temat uzupełniający (bez slajdu) ---
         System.out.println("93.1: " + LocalDate.of(2026, 11, 23).datesUntil(LocalDate.of(2026, 12, 21), Period.ofWeeks(1)).toList());
         int[] array = {5, 6, 7, 8, 9};
         System.out.println("93.2: " + Arrays.toString(Arrays.stream(array, 1, 3).toArray()));

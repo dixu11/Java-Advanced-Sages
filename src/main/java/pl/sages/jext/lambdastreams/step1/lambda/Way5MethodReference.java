@@ -2,7 +2,7 @@ package pl.sages.jext.lambdastreams.step1.lambda;
 
 /**
  * nowe: Krok 1, Sposób V: referencja do metody. W starych materiałach była tylko w rozwiązaniach
- * ({@code Person::getCash}), tu jako osobny, ostatni krok rozkładu (slajdy 85-88).
+ * ({@code Person::getCash}), tu jako osobny, ostatni krok rozkładu (slajdy 87-90).
  * <p>
  * Uruchomienie: {@code mvn compile exec:exec -Dmain=pl.sages.jext.lambdastreams.step1.lambda.Way5MethodReference}
  */
@@ -43,7 +43,7 @@ public class Way5MethodReference {
         button3.click();
         button3.click();
 
-        // cztery rodzaje referencji (slajd 88):
+        // cztery rodzaje referencji (slajd 90):
         //  Klasa::metodaStatyczna    Integer::parseInt      s -> Integer.parseInt(s)
         //  obiekt::metoda            System.out::println    x -> System.out.println(x)
         //  Klasa::metodaInstancji    String::toUpperCase    s -> s.toUpperCase()

@@ -5,7 +5,7 @@ import java.util.stream.Gatherer;
 import java.util.stream.Gatherers;
 
 /**
- * Ćwiczenie 8 (slajdy 142-146): stream gatherers (finalne od JDK 24).
+ * Ćwiczenie 8 (slajdy 137-139): stream gatherers (finalne od JDK 24).
  */
 public class Windows {
 
@@ -28,7 +28,7 @@ public class Windows {
     }
 
     /**
-     * c) Sumy narastające: [1, 2, 3, 4] daje [1, 3, 6, 10]. Gatherers.scan (slajd 143).
+     * c) Sumy narastające: [1, 2, 3, 4] daje [1, 3, 6, 10]. Gatherers.scan (slajd 138).
      */
     public static List<Integer> runningTotals(List<Integer> numbers) {
         // TODO
@@ -36,7 +36,7 @@ public class Windows {
     }
 
     /**
-     * d) Dla chętnych (slajdy 144-146): własny Gatherer, który przepuszcza element tylko wtedy,
+     * d) Dla chętnych (slajdy 139): własny Gatherer, który przepuszcza element tylko wtedy,
      * gdy różni się od poprzedniego: [1, 1, 2, 2, 2, 1, 3, 3] daje [1, 2, 1, 3].
      * Podpowiedź: Gatherer.ofSequential(state, (state, element, downstream) -> ...), state może
      * być jednoelementową tablicą Object[] z poprzednim elementem.

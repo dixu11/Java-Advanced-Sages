@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * sekcja „Lambda, optional”, zad. 3.
+ * Arkusz „Zadania zaawansowane”, sekcja „Lambda, optional”, zad. 3 (SDA-zaawansowane optionalTask).
  * Test: {@code PersonServiceTest}.
  * <p>
  * Stwórz prosty obiekt Person zawierający pole name oraz prostą metodę hello() wyświetlającą komunikat

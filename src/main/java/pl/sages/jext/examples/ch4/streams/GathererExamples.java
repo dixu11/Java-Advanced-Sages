@@ -9,18 +9,18 @@ import java.util.stream.Gatherers;
 import java.util.stream.Stream;
 
 /**
- * Slajdy 142-146: wbudowane gatherery ({@code windowFixed}, {@code windowSliding}, {@code fold}, {@code scan},
+ * Slajdy 137-139: wbudowane gatherery ({@code windowFixed}, {@code windowSliding}, {@code fold}, {@code scan},
  * {@code mapConcurrent}), własny Gatherer {@code BiggestInt} i {@code mapWithMaxErrors}.
  * <p>
- * Poprawka: slajd 146 woła {@code throwingFunction.map(element)}, a {@code TryFunction}
- * ze slajdu 127 ma metodę {@code apply}. Slajd 145 pokazuje tylko importy {@code AtomicInteger} i {@code Gatherer};
+ * Poprawka (dziennik błędów): temat uzupełniający (bez slajdu) woła {@code throwingFunction.map(element)}, a {@code TryFunction}
+ * ze slajdu 129 ma metodę {@code apply}. Slajd 139 pokazuje tylko importy {@code AtomicInteger} i {@code Gatherer};
  * potrzebne są też {@code Supplier} i {@code BinaryOperator}.
  * <p>
  * Uruchomienie: {@code mvn compile exec:exec -Dmain=pl.sages.jext.examples.ch4.streams.GathererExamples}
  */
 public class GathererExamples {
 
-    // --- slajd 145 ---
+    // --- slajd 139 ---
     record BiggestInt(int limit) implements Gatherer<Integer, AtomicInteger, Integer> {
         @Override
         public Supplier<AtomicInteger> initializer() {
@@ -46,7 +46,7 @@ public class GathererExamples {
         }
     }
 
-    // --- slajd 146 (TryFunction ze slajdu 127) ---
+    // --- temat uzupełniający (bez slajdu) (TryFunction ze slajdu 129) ---
     @FunctionalInterface
     public interface TryFunction<T, R> {
         R apply(T t) throws Exception;
@@ -72,14 +72,14 @@ public class GathererExamples {
     }
 
     public static void main(String[] args) {
-        // --- slajd 142 ---
+        // --- slajd 137 ---
         List<Integer> summedPairs = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
                 .gather(Gatherers.windowFixed(2)) // wbudowany typ Gatherer
                 .map(numList -> numList.getFirst() + numList.getLast())
                 .toList(); // [3, 7, 11, 15, 19]
         System.out.println("100: " + summedPairs);
 
-        // --- slajd 143 ---
+        // --- slajd 138 ---
         var semicolonSeparated = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9)
                 .gather(Gatherers.fold(() -> "",
                         (result, element) -> {
@@ -107,11 +107,11 @@ public class GathererExamples {
         System.out.println("101: windowSliding(3) = " + moreWindows);
         System.out.println("101: mapConcurrent = " + concurrent + " (kolejność zachowana)");
 
-        // --- slajd 145 ---
+        // --- slajd 139 ---
         System.out.println("103: BiggestInt(5) = " + Stream.of(1, 4, 2, 7, 3, 9).gather(new BiggestInt(5)).toList()
                 + " (pierwszy element >= 5, reszta niepobrana)");
 
-        // --- slajd 146 ---
+        // --- temat uzupełniający (bez slajdu) ---
         System.out.print("104: ");
         Stream.of("1", "2137", "lol")
                 .gather(mapWithMaxErrors(Long::valueOf, 1))

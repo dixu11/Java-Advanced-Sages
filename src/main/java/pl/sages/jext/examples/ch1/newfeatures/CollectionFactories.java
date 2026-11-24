@@ -12,7 +12,7 @@ import java.util.Set;
  * {@code Arrays.asList}, {@code Set.of}, {@code Map.of}, {@code Map.ofEntries}.
  * <p>
  * Slajd 23 w wersji poprawionej: zmienna {@code stringList}, a {@code remove} na
- * {@code Arrays.asList} rzuca wyjątek.
+ * {@code Arrays.asList} rzuca wyjątek (dziennik błędów).
  * <p>
  * Uruchomienie: {@code mvn compile exec:exec -Dmain=pl.sages.jext.examples.ch1.newfeatures.CollectionFactories}
  */

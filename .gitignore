@@ -1,4 +1,6 @@
-target/
-.idea/
+/target*/
+/jpms/out*/
+/jpms/image/
+/.idea/
 *.iml
-out/
+/mini-shop-report.json

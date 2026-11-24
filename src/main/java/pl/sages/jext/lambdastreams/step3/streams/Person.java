@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
-/** Prosta klasa Person z polami name, birthdate oraz listą zwierząt pets. */
+/** Prosta klasa Person z polami name, birthdate oraz listą zwierząt pets (SDA-zaawansowane streamTask2). */
 public class Person {
 
     private final String name;

@@ -5,7 +5,7 @@ import lombok.SneakyThrows;
 /**
  * Slajd 75: rekurencyjny typ generyczny (fluent API) i sztuczka z varargs, która odczytuje typ w czasie działania.
  * <p>
- * Poprawki względem slajdu: typ elementu tablicy daje {@code componentType()}, a nie
+ * Poprawki względem slajdu (dziennik błędów): typ elementu tablicy daje {@code componentType()}, a nie
  * {@code arrayType()} (ta zwraca tablicę tablic), a konstruktor przyjmuje obiekt, więc
  * {@code getDeclaredConstructor(Object.class)} zamiast bezargumentowego. Wersja ze slajdu rzuca
  * {@code NoSuchMethodException}: {@code main} pokazuje to na końcu.

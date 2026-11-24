@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Krok 3: sekcja „Stream”, zad. 2.
+ * Krok 3: arkusz „Zadania zaawansowane”, sekcja „Stream”, zad. 2 (SDA-zaawansowane streamTask2).
  * Test: {@code PeopleTasksTest}.
  * <p>
  * Stwórz klasę Pet z polem name oraz age. Stwórz 4 instancje tej klasy (obiekty) w main. Stwórz prostą klasę
@@ -26,10 +26,8 @@ public class PeopleTasks {
 
     /** 1) map: imiona osób w kolejności alfabetycznej */
     public static List<String> namesSorted(List<Person> people) {
-        return people.stream()
-                .map(person -> person.getName())
-                .sorted()
-                .toList();
+        // TODO
+        throw new UnsupportedOperationException("TODO");
     }
 
     /** 2) map: miesiące urodzenia (liczbowo, 1-12), w kolejności osób na liście */
@@ -40,19 +38,14 @@ public class PeopleTasks {
 
     /** 3) flatMap: ile zwierząt mają te osoby razem */
     public static long countPets(List<Person> people) {
-       return people.stream()
-                .flatMap(person -> person.getPets().stream())
-                .peek(pet -> System.out.println(pet))
-                .count();
+        // TODO
+        throw new UnsupportedOperationException("TODO");
     }
 
     /** 4) flatMap: łączny wiek wszystkich zwierząt */
     public static int totalPetsAge(List<Person> people) {
-      return people.stream()
-               .flatMap(person -> person.getPets().stream())
-               .mapToInt(pet -> pet.getAge())
-               .sum();
-
+        // TODO
+        throw new UnsupportedOperationException("TODO");
     }
 
     /** 6) mapToInt: średni wiek osób; dla pustej listy -1 */
@@ -76,7 +69,7 @@ public class PeopleTasks {
     public static void main(String[] args) {
         List<Person> people = samplePeople();
         System.out.println(namesSorted(people));
-        //System.out.println(birthMonths(people));
+        System.out.println(birthMonths(people));
         System.out.println(countPets(people));
         System.out.println(totalPetsAge(people));
         System.out.printf("Średni wiek: %.2f%n", averageAge(people));

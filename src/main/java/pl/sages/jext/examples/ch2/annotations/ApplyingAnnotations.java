@@ -10,7 +10,7 @@ import java.util.Arrays;
 /**
  * Slajd 42: gdzie można postawić adnotację (klasa, pole, konstruktor, metoda, użycie typu, zmienna lokalna).
  * <p>
- * Poprawka względem slajdu: konstruktor {@code Soldier}, nie {@code Solider}.
+ * Poprawka względem slajdu: konstruktor {@code Soldier}, nie {@code Solider} (dziennik błędów).
  * Definicji adnotacji na slajdzie nie ma, więc są niżej. {@code main} odczytuje je refleksją;
  * adnotacji zmiennej lokalnej refleksja nie widzi nigdy (nie trafia do pliku .class w czytelnej formie).
  * <p>

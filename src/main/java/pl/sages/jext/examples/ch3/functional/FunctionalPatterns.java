@@ -5,18 +5,18 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
- * Slajdy 117-120, 122: wzorce projektowe w formie funkcyjnej: strategia (Predicate i własny interfejs),
+ * Slajdy 119-122, 124: wzorce projektowe w formie funkcyjnej: strategia (Predicate i własny interfejs),
  * fabryka jako enum z referencjami do konstruktorów, dekorator przez {@code andThen}, łańcuch odpowiedzialności.
  * <p>
- * Poprawki: na slajdzie 122 {@code checkLetters} nie ma {@code return true;} w gałęzi obsłużonej.
- * Kod z {@code andThen}/{@code compose} ze slajdu 122 to kompozycja funkcji, nie łańcuch odpowiedzialności,
- * więc jest osobno, na typach przykładowych. Klasy kształtów ze slajdu 119 są dopisane.
+ * Poprawki (dziennik błędów): na slajdzie 124 {@code checkLetters} nie ma {@code return true;} w gałęzi obsłużonej.
+ * Kod z {@code andThen}/{@code compose} ze slajdu 124 to kompozycja funkcji, nie łańcuch odpowiedzialności,
+ * więc jest osobno, na typach przykładowych. Klasy kształtów ze slajdu 121 są dopisane.
  * <p>
  * Uruchomienie: {@code mvn compile exec:exec -Dmain=pl.sages.jext.examples.ch3.functional.FunctionalPatterns}
  */
 public class FunctionalPatterns {
 
-    // --- slajd 118 ---
+    // --- slajd 120 ---
     @FunctionalInterface
     public interface LearningStrategy {
         // jedna metoda abstrakcyjna, jeśli więcej to potrzebne byłyby klasy anonimowe
@@ -35,7 +35,7 @@ public class FunctionalPatterns {
         }
     }
 
-    // --- slajd 119 ---
+    // --- slajd 121 ---
     enum Color {RED, GREEN}
 
     interface Shape {}
@@ -61,14 +61,14 @@ public class FunctionalPatterns {
         }
     }
 
-    // --- slajd 122: kompozycja funkcji, na typach przykładowych ---
+    // --- slajd 124: kompozycja funkcji, na typach przykładowych ---
     record A(int v) {}
     record B(int v) {}
     record C(int v) {}
     record D(int v) {}
 
     public static void main(String[] args) {
-        // --- slajd 117 ---
+        // --- slajd 119 ---
         Predicate<String> isNumber = s -> s.matches("\\d+");
         Predicate<String> isLowercase = s -> s.equals(s.toLowerCase());
         System.out.println("75: " + isNumber.test("1234"));   // true
@@ -82,19 +82,19 @@ public class FunctionalPatterns {
         var redCircle = ShapeType.CIRCLE.newInstance(Color.RED);
         System.out.println("77: " + redCircle + ", " + ShapeType.PENTAGON.newInstance(Color.GREEN));
 
-        // --- slajd 120 ---
+        // --- slajd 122 ---
         Function<String, String> exclaim = s -> s + "!";
         Function<String, String> decorate = exclaim.andThen(s -> "[" + s + "]");
         System.out.println("78: " + decorate.apply("Hello"));  // [Hello!]
 
-        // --- slajd 122: kompozycja ---
+        // --- slajd 124: kompozycja ---
         Function<A, B> first = a -> new B(a.v() + 1);
         Function<B, C> second = b -> new C(b.v() * 10);
         Function<C, D> third = c -> new D(c.v() - 3);
         System.out.println("80: andThen = " + first.andThen(second).andThen(third).apply(new A(1))
                 + ", compose = " + third.compose(second.compose(first)).apply(new A(1)));
 
-        // --- slajd 122: łańcuch odpowiedzialności (poprawiony) ---
+        // --- slajd 124: łańcuch odpowiedzialności (poprawiony) ---
         Predicate<String> checkDigits = s -> {
             if (s.matches("\\d+")) {
                 System.out.println("80: Same cyfry");

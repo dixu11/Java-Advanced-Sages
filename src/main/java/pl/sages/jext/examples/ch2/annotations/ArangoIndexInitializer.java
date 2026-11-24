@@ -13,7 +13,7 @@ import java.util.Set;
  * Zamiast ArangoDB zaślepka w pamięci: {@code getOrCreateArangoCollection} i {@code createIndex}
  * tylko wypisują, co poszłoby do bazy.
  * <p>
- * Poprawka względem slajdu: ClassGraph nie ma metody {@code enableClasspath()},
+ * Poprawka względem slajdu: ClassGraph nie ma metody {@code enableClasspath()} (dziennik błędów),
  * classpath skanuje domyślnie.
  * <p>
  * Uruchomienie: {@code mvn compile exec:exec -Dmain=pl.sages.jext.examples.ch2.annotations.ArangoIndexInitializer}
@@ -63,7 +63,7 @@ public class ArangoIndexInitializer {
     // --- zaślepki operacji bazy (na slajdzie „operacje bazy pominięto”) ---
 
     private ArangoCollection getOrCreateArangoCollection(Entity entity) {
-        // @Entity nie ma atrybutów, więc z samej adnotacji nie wynika nazwa kolekcji
+        // @Entity nie ma atrybutów, więc z samej adnotacji nie wynika nazwa kolekcji (dziennik: USPRAWNIENIE)
         System.out.println("getOrCreateArangoCollection(" + entity + ")");
         return new ArangoCollection("?");
     }

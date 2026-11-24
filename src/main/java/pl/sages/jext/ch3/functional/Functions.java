@@ -2,14 +2,14 @@ package pl.sages.jext.ch3.functional;
 
 import pl.sages.jext.data.Order;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
- * Ćwiczenie 5 (slajdy 86-95): łączenie Predicate i Function, funkcje wyższego rzędu, memoizacja.
+ * Ćwiczenie 5 (slajdy 88-97): łączenie Predicate i Function, funkcje wyższego rzędu, memoizacja.
  * Dane: rekord Order (pakiet pl.sages.jext.data), lista z Orders.all().
  */
 public class Functions {
@@ -17,26 +17,11 @@ public class Functions {
     /** a) Predykat: kwota zamówienia jest WIĘKSZA niż threshold. */
     public static Predicate<Order> moreExpensiveThan(double threshold) {
         // TODO
-
-        List.of("abc").stream()
-                .forEach(System.out::println);
-             //   .forEach(text -> System.out.println(text));
-
-
-
         throw new UnsupportedOperationException("TODO");
     }
 
     /** b) Predykat: zamówienie z podanego miasta. */
     public static Predicate<Order> fromCity(String city) {
-
-        try(Scanner sc = new Scanner(new File("file.txt"))){
-            sc.nextLine();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
-
         // TODO
         throw new UnsupportedOperationException("TODO");
     }
@@ -49,7 +34,7 @@ public class Functions {
 
     /**
      * d) Połącz predykaty z punktów a-c, BEZ pisania nowej lambdy: droższe niż threshold
-     * I z podanego miasta I NIE anulowane. Użyj and(...) oraz Predicate.not(...) (slajd 89).
+     * I z podanego miasta I NIE anulowane. Użyj and(...) oraz Predicate.not(...) (slajd 91).
      */
     public static Predicate<Order> goodOrders(double threshold, String city) {
         // TODO
@@ -68,7 +53,7 @@ public class Functions {
 
     /**
      * f) Złóż dwie funkcje: najpierw klient zamówienia (Order::customer), potem zamiana na WIELKIE litery.
-     * Użyj andThen (slajd 90).
+     * Użyj andThen (slajd 92).
      */
     public static Function<Order, String> customerInUpperCase() {
         // TODO
@@ -76,7 +61,7 @@ public class Functions {
     }
 
     /**
-     * g) Dla chętnych (slajd 95): zwróć funkcję, która zapamiętuje wyniki. Dla argumentu, który już był,
+     * g) Dla chętnych (slajd 97): zwróć funkcję, która zapamiętuje wyniki. Dla argumentu, który już był,
      * NIE wywołuje ponownie funkcji oryginalnej. Podpowiedź: HashMap i computeIfAbsent.
      */
     public static <T, R> Function<T, R> memoize(Function<T, R> function) {

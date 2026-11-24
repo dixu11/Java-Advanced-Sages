@@ -7,12 +7,12 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
- * Slajdy 89-91: łączenie {@code Predicate} ({@code not}, {@code and}, {@code or}), {@code Function.andThen},
+ * Slajdy 91-93: łączenie {@code Predicate} ({@code not}, {@code and}, {@code or}), {@code Function.andThen},
  * lambdy w metodach kolekcji.
  * <p>
- * Slajd 91 w wersji poprawionej: {@code removeIf(num -> num % 2 == 0)} na {@code ArrayList};
+ * Slajd 93 w wersji poprawionej (dziennik błędów): {@code removeIf(num -> num % 2 == 0)} na {@code ArrayList};
  * wersja ze slajdu się nie kompiluje, a na {@code Arrays.asList} {@code removeIf} rzuca wyjątek.
- * Klasy {@code Soldier} i {@code Army} ze slajdów 89-90 mają dopisane konstruktory i pola potrzebne do pokazu.
+ * Klasy {@code Soldier} i {@code Army} ze slajdów 91-92 mają dopisane konstruktory i pola potrzebne do pokazu.
  * <p>
  * Uruchomienie: {@code mvn compile exec:exec -Dmain=pl.sages.jext.examples.ch3.functional.PredicateAndFunction}
  */
@@ -47,7 +47,7 @@ public class PredicateAndFunction {
     }
 
     public static void main(String[] args) {
-        // --- slajd 89 ---
+        // --- slajd 91 ---
         Predicate<Soldier> isDead = soldier -> soldier.getHealthPoints() <= 0;
         Predicate<Soldier> isAlive = Predicate.not(isDead);
         Predicate<Soldier> isZombie = isDead.and(soldier -> soldier.getAttack() > 0);
@@ -60,7 +60,7 @@ public class PredicateAndFunction {
                     + ", readyToAttack=" + isReadyToAttack.test(s));
         }
 
-        // --- slajd 90 ---
+        // --- slajd 92 ---
         var general = new Soldier("generał", 100, 50);
         alive.army = new Army(general);
         Function<Soldier, Army> getArmy = soldier -> soldier.getArmy();
@@ -70,7 +70,7 @@ public class PredicateAndFunction {
         System.out.println("57: generał żołnierza = " + getSoldierGeneral.apply(alive) + ", compose: " + sameViaCompose.apply(alive)
                 + ", identity: " + Function.<Soldier>identity().apply(alive));
 
-        // --- slajd 91 (poprawiony) ---
+        // --- slajd 93 (poprawiony) ---
         var integers = new ArrayList<>(List.of(1, 5, 4, 2));
         integers.removeIf(num -> num % 2 == 0); // operacja usuwa parzyste liczby
         System.out.println("58: po removeIf = " + integers);

@@ -9,10 +9,10 @@ import java.util.function.DoubleBinaryOperator;
 public enum Operation {
 
     // TODO: zamień null na lambdy, np. (a, b) -> a + b
-    ADD("+", null),
-    SUBTRACT("-", null),
-    MULTIPLY("*", null),
-    DIVIDE("/", null);
+    ADD("+", (a, b) -> { throw new UnsupportedOperationException("TODO"); }),
+    SUBTRACT("-", (a, b) -> { throw new UnsupportedOperationException("TODO"); }),
+    MULTIPLY("*", (a, b) -> { throw new UnsupportedOperationException("TODO"); }),
+    DIVIDE("/", (a, b) -> { throw new UnsupportedOperationException("TODO"); });
 
     private final String symbol;
     private final DoubleBinaryOperator operator;

@@ -1,7 +1,7 @@
 package pl.sages.jext.lambdastreams.step1.lambda;
 
 /**
- * Przycisk ze Sposobu III-V: kod kliknięcia nie siedzi w klasie przycisku,
+ * Przycisk ze Sposobu III-V (Comarch 2025): kod kliknięcia nie siedzi w klasie przycisku,
  * tylko w obiekcie {@link ButtonAction} podanym z zewnątrz.
  */
 public class Button {

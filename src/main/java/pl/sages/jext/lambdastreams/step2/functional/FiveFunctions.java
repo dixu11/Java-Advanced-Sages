@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 /**
- * Krok 2: gotowe interfejsy funkcyjne.
+ * Krok 2: gotowe interfejsy funkcyjne (SDA-36 Zad33, SDA-zaawansowane FunctionalInterfacesDemo, grupa 120).
  * Test: {@code FiveFunctionsTest}.
  * <p>
  * Stosując gotowe klasy interfejsów funkcyjnych (Function, Consumer, Supplier, Comparator, Predicate)
@@ -48,37 +48,23 @@ public class FiveFunctions {
 
     /** 1) funkcja przyjmująca tekst i zwracająca jego długość */
     public static final Function<String, Integer> TEXT_LENGTH =
-            text -> text.length();
+            text -> { throw new UnsupportedOperationException("TODO"); }; // TODO
 
-    /**
-     * 2) funkcja sprawdzająca czy przekazany tekst ma minimum 5 znaków
-     */
+    /** 2) funkcja sprawdzająca czy przekazany tekst ma minimum 5 znaków */
     public static final Predicate<String> HAS_AT_LEAST_FIVE_CHARS =
-            text -> text.length() >= 5;
+            text -> { throw new UnsupportedOperationException("TODO"); }; // TODO
 
     /** 3) funkcja dostarczająca losową liczbę z przedziału 1-10 */
     public static final Supplier<Integer> RANDOM_ONE_TO_TEN =
-            () ->new Random().nextInt(1,11);
+            () -> { throw new UnsupportedOperationException("TODO"); }; // TODO
 
-           /* () ->{
-                Random random = new Random();
-               return random.nextInt(1,11);
-              // return random.nextInt(10)+1;
-            };*/
-
-    /**
-     * 4) funkcja drukująca tekst wielkimi literami
-     */
+    /** 4) funkcja drukująca tekst wielkimi literami */
     public static final Consumer<String> PRINT_UPPER_CASE =
-            text -> System.out.println(text.toUpperCase());
+            text -> { throw new UnsupportedOperationException("TODO"); }; // TODO
 
-
-    /**
-     * 5) funkcja porównująca dwa teksty po ilości liter
-     */
+    /** 5) funkcja porównująca dwa teksty po ilości liter */
     public static final Comparator<String> BY_LENGTH =
-            Comparator.comparingInt(String::length);
-
+            (s1, s2) -> { throw new UnsupportedOperationException("TODO"); }; // TODO
 
     public static void main(String[] args) {
         System.out.println(TEXT_LENGTH.apply("abcd"));
