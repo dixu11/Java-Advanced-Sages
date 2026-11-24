@@ -5,8 +5,10 @@ public class Account {
 
     private final String login;
 
+    @Mask
     private final String password;
 
+    @Mask(keepLast = 4)
     private final String cardNumber;
 
     private final double balance;
