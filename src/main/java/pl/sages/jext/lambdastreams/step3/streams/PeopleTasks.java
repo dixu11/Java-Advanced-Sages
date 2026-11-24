@@ -28,58 +28,30 @@ public class PeopleTasks {
     public static List<String> namesSorted(List<Person> people) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return people.stream()
-        //         .map(person -> person.getName())
-        //         .sorted()
-        //         .toList();
-        // KONIEC ROZWIĄZANIA
     }
 
     /** 2) map: miesiące urodzenia (liczbowo, 1-12), w kolejności osób na liście */
     public static List<Integer> birthMonths(List<Person> people) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return people.stream()
-        //         .map(person -> person.getBirthdate().getMonthValue())
-        //         .toList();
-        // KONIEC ROZWIĄZANIA
     }
 
     /** 3) flatMap: ile zwierząt mają te osoby razem */
     public static long countPets(List<Person> people) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return people.stream()
-        //         .flatMap(person -> person.getPets().stream()) //Stream<Person> -> Stream<Pet>
-        //         .count();
-        // KONIEC ROZWIĄZANIA
     }
 
     /** 4) flatMap: łączny wiek wszystkich zwierząt */
     public static int totalPetsAge(List<Person> people) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return people.stream()
-        //         .flatMap(person -> person.getPets().stream())
-        //         .mapToInt(pet -> pet.getAge())
-        //         .sum();
-        // KONIEC ROZWIĄZANIA
     }
 
     /** 6) mapToInt: średni wiek osób; dla pustej listy -1 */
     public static double averageAge(List<Person> people) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return people.stream()
-        //         .mapToInt(person -> person.getAge())
-        //         .average()
-        //         .orElse(-1);
-        // KONIEC ROZWIĄZANIA
     }
 
     public static List<Person> samplePeople() {

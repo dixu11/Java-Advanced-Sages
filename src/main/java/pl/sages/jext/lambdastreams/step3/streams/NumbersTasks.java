@@ -27,54 +27,30 @@ public class NumbersTasks {
     public static void printAll(List<Integer> numbers) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // numbers.forEach(number -> System.out.println(number));
-        // KONIEC ROZWIĄZANIA
     }
 
     /** 2) stream: posortuj rosnąco i wyświetl, każdą w osobnej linii */
     public static void printSorted(List<Integer> numbers) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // numbers.stream()
-        //         .sorted()
-        //         .forEach(number -> System.out.println(number));
-        // KONIEC ROZWIĄZANIA
     }
 
     /** 3) odfiltruj liczby nieparzyste (zostają parzyste) i policz, ile zostało: count() */
     public static long countEven(List<Integer> numbers) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return numbers.stream()
-        //         .filter(number -> number % 2 == 0)
-        //         .count();
-        // KONIEC ROZWIĄZANIA
     }
 
     /** 4) odfiltruj liczby powyżej 50, pozostałe zbierz do nowej listy */
     public static List<Integer> notAboveFifty(List<Integer> numbers) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return numbers.stream()
-        //         .filter(number -> number <= 50) // które zostają?
-        //         .toList();
-        // KONIEC ROZWIĄZANIA
     }
 
     /** 5) posortuj malejąco i pobierz pierwszą metodą findFirst */
     public static int findFirstDescending(List<Integer> numbers) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return numbers.stream()
-        //         .sorted((number1, number2) -> number2 - number1) // nowe, krócej: Comparator.reverseOrder()
-        //         .findFirst()
-        //         .orElseThrow();
-        // KONIEC ROZWIĄZANIA
     }
 
     public static void main(String[] args) {

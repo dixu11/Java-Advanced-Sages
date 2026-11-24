@@ -34,44 +34,24 @@ public class LambdaTasks {
     public static Operation addition() {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return new Operation() {
-        //     @Override
-        //     public int calculate(int number1, int number2) {
-        //         return number1 + number2;
-        //     }
-        // };
-        // KONIEC ROZWIĄZANIA
     }
 
     /** 1b) odejmowanie, za pomocą lambdy. */
     public static Operation subtraction() {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return (number1, number2) -> number1 - number2;
-        // KONIEC ROZWIĄZANIA
     }
 
     /** 2a) funkcja krzycząca: "Hello" wyświetla "HELLO!". */
     public static Printer shouter() {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return text -> System.out.println(text.toUpperCase() + "!");
-        // KONIEC ROZWIĄZANIA
     }
 
     /** 2b) trudne: pierwsze litery słów, "Ala ma kota" wyświetla "Amk". */
     public static Printer firstLetters() {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return text -> System.out.println(
-        //         Arrays.stream(text.trim().split("\\s+"))
-        //                 .map(word -> word.substring(0, 1))
-        //                 .collect(Collectors.joining()));
-        // KONIEC ROZWIĄZANIA
     }
 
     public static void main(String[] args) {

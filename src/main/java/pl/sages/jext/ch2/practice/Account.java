@@ -5,14 +5,8 @@ public class Account {
 
     private final String login;
 
-    // ROZWIĄZANIE (odkomentuj i usuń throw):
-    // @Mask
-    // KONIEC ROZWIĄZANIA
     private final String password;
 
-    // ROZWIĄZANIE (odkomentuj i usuń throw):
-    // @Mask(keepLast = 4)
-    // KONIEC ROZWIĄZANIA
     private final String cardNumber;
 
     private final double balance;

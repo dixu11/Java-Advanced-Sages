@@ -12,13 +12,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  * - @JsonSubTypes z dwoma @JsonSubTypes.Type: Transfer o nazwie "transfer" i Card o nazwie "card".
  * W JSON pojawi się wtedy pole "type".
  */
-// ROZWIĄZANIE (odkomentuj i usuń throw):
-// @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
-// @JsonSubTypes({
-//         @JsonSubTypes.Type(value = Payment.Transfer.class, name = "transfer"),
-//         @JsonSubTypes.Type(value = Payment.Card.class, name = "card")
-// })
-// KONIEC ROZWIĄZANIA
 public sealed interface Payment permits Payment.Transfer, Payment.Card {
 
     double amount();

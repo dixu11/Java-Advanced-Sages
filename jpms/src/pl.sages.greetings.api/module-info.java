@@ -5,7 +5,4 @@
  */
 module pl.sages.greetings.api {
     // TODO 1: udostępnij innym modułom pakiet pl.sages.greetings.api (i tylko ten)
-    // ROZWIĄZANIE (odkomentuj i usuń throw):
-    // exports pl.sages.greetings.api;
-    // KONIEC ROZWIĄZANIA
 }

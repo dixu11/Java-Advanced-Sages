@@ -22,19 +22,5 @@ public class Validator {
         List<String> errors = new ArrayList<>();
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // for (Field field : object.getClass().getDeclaredFields()) {
-        //     NotBlank annotation = field.getAnnotation(NotBlank.class);
-        //     if (annotation == null) {
-        //         continue;
-        //     }
-        //     field.setAccessible(true);
-        //     Object value = field.get(object);
-        //     if (value == null || value.toString().isBlank()) {
-        //         errors.add(field.getName() + ": " + annotation.message());
-        //     }
-        // }
-        // return errors;
-        // KONIEC ROZWIĄZANIA
     }
 }

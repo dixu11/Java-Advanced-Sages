@@ -32,13 +32,6 @@ public class StructuredTasks {
     public static Profile fetchProfile(long id) throws InterruptedException, ExecutionException {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // try (ExecutorService executor = Executors.newVirtualThreadPerTaskExecutor()) {
-        //     Future<User> user = executor.submit(() -> Services.fetchUser(id));
-        //     Future<List<String>> orders = executor.submit(() -> Services.fetchOrders(id));
-        //     return new Profile(user.get(), orders.get());
-        // }
-        // KONIEC ROZWIĄZANIA
     }
 
     /**
@@ -49,15 +42,6 @@ public class StructuredTasks {
     public static String fastestServer() throws InterruptedException, ExecutionException {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // try (ExecutorService executor = Executors.newVirtualThreadPerTaskExecutor()) {
-        //     List<Callable<String>> queries = List.of(
-        //             () -> Services.fetchFromServer("A", Duration.ofMillis(500)),
-        //             () -> Services.fetchFromServer("B", Duration.ofMillis(100)),
-        //             () -> Services.fetchFromServer("C", Duration.ofMillis(300)));
-        //     return executor.invokeAny(queries);
-        // }
-        // KONIEC ROZWIĄZANIA
     }
 
     // ---------------------------------------------------------------------------------------------
@@ -79,8 +63,5 @@ public class StructuredTasks {
     public static String handleRequest(String user) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return ScopedValue.where(CURRENT_USER, user).call(StructuredTasks::greeting);
-        // KONIEC ROZWIĄZANIA
     }
 }

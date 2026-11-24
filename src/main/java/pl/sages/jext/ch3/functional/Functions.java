@@ -18,27 +18,18 @@ public class Functions {
     public static Predicate<Order> moreExpensiveThan(double threshold) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return o -> o.amount() > threshold;
-        // KONIEC ROZWIĄZANIA
     }
 
     /** b) Predykat: zamówienie z podanego miasta. */
     public static Predicate<Order> fromCity(String city) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return o -> o.city().equals(city);
-        // KONIEC ROZWIĄZANIA
     }
 
     /** c) Predykat: zamówienie anulowane (status CANCELLED). */
     public static Predicate<Order> cancelled() {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return o -> o.status() == Order.Status.CANCELLED;
-        // KONIEC ROZWIĄZANIA
     }
 
     /**
@@ -48,9 +39,6 @@ public class Functions {
     public static Predicate<Order> goodOrders(double threshold, String city) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return moreExpensiveThan(threshold).and(fromCity(city)).and(Predicate.not(cancelled()));
-        // KONIEC ROZWIĄZANIA
     }
 
     /**
@@ -61,9 +49,6 @@ public class Functions {
                                       Function<Order, String> format) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return orders.stream().filter(filter).map(format).toList();
-        // KONIEC ROZWIĄZANIA
     }
 
     /**
@@ -73,10 +58,6 @@ public class Functions {
     public static Function<Order, String> customerInUpperCase() {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // Function<Order, String> customer = Order::customer;
-        // return customer.andThen(String::toUpperCase);
-        // KONIEC ROZWIĄZANIA
     }
 
     /**
@@ -86,9 +67,5 @@ public class Functions {
     public static <T, R> Function<T, R> memoize(Function<T, R> function) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // Map<T, R> cache = new HashMap<>();
-        // return argument -> cache.computeIfAbsent(argument, function);
-        // KONIEC ROZWIĄZANIA
     }
 }

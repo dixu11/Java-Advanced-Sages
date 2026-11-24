@@ -4,9 +4,4 @@
 module pl.sages.app {
     // TODO 4: wymagaj modułu z interfejsem Greeting
     // TODO 5: zadeklaruj, że aplikacja KORZYSTA z usługi pl.sages.greetings.api.Greeting (uses ...)
-    // ROZWIĄZANIE (odkomentuj i usuń throw):
-    // requires pl.sages.greetings.api;
-    //
-    // uses pl.sages.greetings.api.Greeting;
-    // KONIEC ROZWIĄZANIA
 }

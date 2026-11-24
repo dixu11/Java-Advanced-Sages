@@ -15,13 +15,6 @@ public class Generics {
     public static double sum(List<? extends Number> numbers) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // double sum = 0;
-        // for (Number n : numbers) {
-        //     sum += n.doubleValue();
-        // }
-        // return sum;
-        // KONIEC ROZWIĄZANIA
     }
 
     /**
@@ -31,11 +24,6 @@ public class Generics {
     public static void appendSequence(List<? super Integer> target, int count) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // for (int i = 1; i <= count; i++) {
-        //     target.add(i);
-        // }
-        // KONIEC ROZWIĄZANIA
     }
 
     /**
@@ -45,9 +33,6 @@ public class Generics {
     public static <T> void copy(List<? extends T> source, List<? super T> target) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // target.addAll(source);
-        // KONIEC ROZWIĄZANIA
     }
 
     /**
@@ -57,17 +42,5 @@ public class Generics {
     public static <T extends Comparable<? super T>> T largest(List<? extends T> list) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // if (list.isEmpty()) {
-        //     throw new IllegalArgumentException("pusta lista");
-        // }
-        // T max = list.getFirst();
-        // for (T element : list) {
-        //     if (element.compareTo(max) > 0) {
-        //         max = element;
-        //     }
-        // }
-        // return max;
-        // KONIEC ROZWIĄZANIA
     }
 }

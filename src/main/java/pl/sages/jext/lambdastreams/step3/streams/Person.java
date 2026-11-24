@@ -21,9 +21,6 @@ public class Person {
     public int getAge() {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return (int) birthdate.until(LocalDate.now(), ChronoUnit.YEARS);
-        // KONIEC ROZWIĄZANIA
     }
 
     public String getName() {

@@ -21,9 +21,6 @@ public class MyPerson extends Person {
     protected int getRandomCash() {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return RANDOM.nextInt(101);
-        // KONIEC ROZWIĄZANIA
     }
 
     //aktualna data cofnięta losową ilość lat: od 0 do 100
@@ -31,9 +28,6 @@ public class MyPerson extends Person {
     public LocalDate getRandomBirthDate() {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return LocalDate.now().minusYears(RANDOM.nextInt(101));
-        // KONIEC ROZWIĄZANIA
     }
 
     //wiek osoby w latach na podstawie jej daty urodzenia
@@ -41,8 +35,5 @@ public class MyPerson extends Person {
     public int getAge() {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return (int) getBirthDate().until(LocalDate.now(), ChronoUnit.YEARS);
-        // KONIEC ROZWIĄZANIA
     }
 }

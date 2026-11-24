@@ -22,23 +22,12 @@ public class EquationTasks {
     public static Equation multiplication() {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return (num1, num2) -> num1 * num2;
-        // KONIEC ROZWIĄZANIA
     }
 
     /** dzielenie, lambdą; dla dzielnika 0 rzuca IllegalArgumentException */
     public static Equation division() {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return (num1, num2) -> {
-        //     if (num2 == 0) {
-        //         throw new IllegalArgumentException("Nie można podać liczby 0 jako tej przez którą dzielimy");
-        //     }
-        //     return num1 / num2;
-        // };
-        // KONIEC ROZWIĄZANIA
     }
 
     public static void main(String[] args) {

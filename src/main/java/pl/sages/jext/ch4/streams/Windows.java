@@ -16,9 +16,6 @@ public class Windows {
     public static List<List<Integer>> inBatches(List<Integer> numbers, int size) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return numbers.stream().gather(Gatherers.windowFixed(size)).toList();
-        // KONIEC ROZWIĄZANIA
     }
 
     /**
@@ -28,12 +25,6 @@ public class Windows {
     public static List<Double> movingAverage(List<Integer> numbers, int window) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return numbers.stream()
-        //         .gather(Gatherers.windowSliding(window))
-        //         .map(w -> w.stream().mapToInt(Integer::intValue).average().orElse(0))
-        //         .toList();
-        // KONIEC ROZWIĄZANIA
     }
 
     /**
@@ -42,9 +33,6 @@ public class Windows {
     public static List<Integer> runningTotals(List<Integer> numbers) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return numbers.stream().gather(Gatherers.scan(() -> 0, Integer::sum)).toList();
-        // KONIEC ROZWIĄZANIA
     }
 
     /**
@@ -56,16 +44,5 @@ public class Windows {
     public static <T> Gatherer<T, ?, T> withoutAdjacentDuplicates() {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return Gatherer.<T, Object[], T>ofSequential(
-        //         () -> new Object[]{new Object()},
-        //         (state, element, downstream) -> {
-        //             if (element.equals(state[0])) {
-        //                 return true;
-        //             }
-        //             state[0] = element;
-        //             return downstream.push(element);
-        //         });
-        // KONIEC ROZWIĄZANIA
     }
 }

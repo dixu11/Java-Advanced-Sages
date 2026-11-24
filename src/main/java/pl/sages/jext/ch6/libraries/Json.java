@@ -14,9 +14,6 @@ public class Json {
     public static String toJson(Payment payment) throws JsonProcessingException {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return MAPPER.writeValueAsString(payment);
-        // KONIEC ROZWIĄZANIA
     }
 
     /**
@@ -26,9 +23,6 @@ public class Json {
     public static Payment fromJson(String json) throws JsonProcessingException {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return MAPPER.readValue(json, Payment.class);
-        // KONIEC ROZWIĄZANIA
     }
 
     /** Gotowe: pattern matching na odczytanej płatności. */

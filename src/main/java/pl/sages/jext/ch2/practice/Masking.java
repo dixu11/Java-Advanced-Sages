@@ -22,19 +22,5 @@ public class Masking {
 
     public static String describe(Object object) throws IllegalAccessException {
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // StringJoiner description = new StringJoiner(", ", object.getClass().getSimpleName() + "[", "]");
-        // for (Field field : object.getClass().getDeclaredFields()) {
-        //     field.setAccessible(true);
-        //     String value = String.valueOf(field.get(object));
-        //     Mask mask = field.getAnnotation(Mask.class);
-        //     if (mask != null) {
-        //         int keepLast = Math.min(mask.keepLast(), value.length());
-        //         value = "****" + value.substring(value.length() - keepLast);
-        //     }
-        //     description.add(field.getName() + "=" + value);
-        // }
-        // return description.toString();
-        // KONIEC ROZWIĄZANIA
     }
 }

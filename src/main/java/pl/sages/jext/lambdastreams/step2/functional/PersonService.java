@@ -24,18 +24,11 @@ public class PersonService {
     public void add(Person person) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // people.add(person);
-        // KONIEC ROZWIĄZANIA
     }
 
     public Optional<Person> findPersonWithShortestName() {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // return people.stream()
-        //         .min(Comparator.comparingInt(person -> person.getName().length()));
-        // KONIEC ROZWIĄZANIA
     }
 
     public static void main(String[] args) {

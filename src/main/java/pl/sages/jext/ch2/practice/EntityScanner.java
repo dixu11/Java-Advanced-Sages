@@ -21,10 +21,5 @@ public class EntityScanner {
     public static List<String> findEntityClasses(String packageName) {
         // TODO
         throw new UnsupportedOperationException("TODO");
-        // ROZWIĄZANIE (odkomentuj i usuń throw):
-        // try (ScanResult scan = new ClassGraph().enableAnnotationInfo().acceptPackages(packageName).scan()) {
-        //     return scan.getClassesWithAnnotation(Entity.class).getNames().stream().sorted().toList();
-        // }
-        // KONIEC ROZWIĄZANIA
     }
 }
