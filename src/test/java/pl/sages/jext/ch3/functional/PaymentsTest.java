@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import pl.sages.jext.ch3.functional.Payments.Action;
 
 import java.io.IOException;
+import java.lang.annotation.Retention;
 import java.math.BigDecimal;
 import java.time.YearMonth;
 import java.util.Arrays;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 @DisplayName("Ćw. 6: wynik płatności (sealed, rekordy, switch z wzorcami)")
 class PaymentsTest {
