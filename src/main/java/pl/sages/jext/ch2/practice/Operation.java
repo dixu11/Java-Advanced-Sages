@@ -9,10 +9,10 @@ import java.util.function.DoubleBinaryOperator;
 public enum Operation {
 
     // TODO: zamień null na lambdy, np. (a, b) -> a + b
-    ADD("+", (a, b) -> { throw new UnsupportedOperationException("TODO"); }),
-    SUBTRACT("-", (a, b) -> { throw new UnsupportedOperationException("TODO"); }),
-    MULTIPLY("*", (a, b) -> { throw new UnsupportedOperationException("TODO"); }),
-    DIVIDE("/", (a, b) -> { throw new UnsupportedOperationException("TODO"); });
+    ADD("+", (a, b) -> a + b),
+    SUBTRACT("-", (a, b) -> a - b),
+    MULTIPLY("*", (a, b) -> a * b),
+    DIVIDE("/", (a, b) -> a / b);
 
     private final String symbol;
     private final DoubleBinaryOperator operator;
@@ -37,7 +37,12 @@ public enum Operation {
      */
     public static Operation fromSymbol(String symbol) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        for (Operation o : values()) {
+            if (o.symbol.equals(symbol)) {
+                return o;
+            }
+        }
+        throw new IllegalArgumentException("Nieznany symbol: " + symbol);
     }
 
     /** Gotowe: liczy proste wyrażenie, np. "2 * 3", przy użyciu fabryki. */
