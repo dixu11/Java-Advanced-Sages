@@ -46,7 +46,16 @@ public class Payments {
      */
     public static String customerMessage(PaymentResult r) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return switch (r) {
+            case Success(_, Money(var amount, var currency)) when amount.compareTo(MANUAL_REVIEW_LIMIT) > 0 ->
+                    "Płatność przyjęta, czeka na potwierdzenie: " + amount.toPlainString() + " " + currency;
+            case Success(_, Money(var amount, var currency)) -> "Zapłacono " + amount.toPlainString() + " " + currency;
+            case Declined(InsufficientFunds(Money(var amount, var currency))) ->
+                    "Brakuje " + amount.toPlainString() + " " + currency + " na koncie";
+            case Declined(CardExpired(var date)) -> "Karta wygasła " + date;
+            case Declined(FraudSuspected _) -> "Płatność odrzucona, skontaktuj się z bankiem";
+            case Failure _ -> "Błąd techniczny, spróbuj ponownie później";
+        };
     }
 
     /**
@@ -68,7 +77,15 @@ public class Payments {
      */
     public static Action nextAction(PaymentResult r) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return switch (r) {
+            case Success(_, Money(var amount, _)) when amount.compareTo(MANUAL_REVIEW_LIMIT) > 0 -> Action.MANUAL_REVIEW;
+            case Success _ -> Action.SHIP;
+            case Declined(InsufficientFunds _), Declined(CardExpired _) -> Action.ASK_FOR_ANOTHER_CARD;
+            case Declined(FraudSuspected(var score)) when score >= 80 -> Action.MANUAL_REVIEW;
+            case Declined(FraudSuspected _) -> Action.ASK_FOR_ANOTHER_CARD;
+            case Failure(TimeoutException _) -> Action.RETRY_LATER;
+            case Failure _ -> Action.MANUAL_REVIEW;
+        };
     }
 
     // 6d) Na koniec, bez testu: nowy wariant wyniku.
@@ -79,6 +96,10 @@ public class Payments {
     //    "the switch expression does not cover all possible input values".
     //    To jest siła sealed: każde miejsce do poprawienia widzisz przy kompilacji, a nie na produkcji w gałęzi default.
     // 3. Obsłuż Pending w obu switchach: klient dostaje "Czekamy na potwierdzenie banku", a akcja to RETRY_LATER.
+    // Rozwiązanie 6d (w tym projekcie Pending nie jest dodany, żeby testy pasowały do szkieletu):
+    //     case Pending _ -> "Czekamy na potwierdzenie banku";   // w customerMessage
+    //     case Pending _ -> Action.RETRY_LATER;                 // w nextAction
+    // Przy declineReport nic nie trzeba zmieniać: tam switch idzie po DeclineReason, a nie po PaymentResult.
 
     /**
      * 6e) Dla chętnych (slajdy 132-136): raport odmów. Dla wyników typu Declined policz, ile było odmów
@@ -92,6 +113,18 @@ public class Payments {
      */
     public static Map<String, Long> declineReport(List<PaymentResult> results) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return results.stream()
+                .<DeclineReason>mapMulti((r, out) -> {
+                    if (r instanceof Declined(var reason)) {
+                        out.accept(reason);
+                    }
+                })
+                .collect(Collectors.groupingBy(reason -> switch (reason) {
+                    case InsufficientFunds _ -> "brak środków";
+                    case CardExpired _ -> "karta wygasła";
+                    case FraudSuspected _ -> "podejrzenie oszustwa";
+                }, Collectors.counting()));
+        // To samo przez flatMap:
+        //     .flatMap(r -> r instanceof Declined(var reason) ? Stream.of(reason) : Stream.empty())
     }
 }

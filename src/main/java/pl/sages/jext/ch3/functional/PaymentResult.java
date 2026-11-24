@@ -15,7 +15,7 @@ import java.time.YearMonth;
  * Rekordy są niejawnie final, więc w nich nic nie trzeba zmieniać.
  * Dopiero po tym kroku switch bez default w klasie Payments się skompiluje.
  */
-public interface PaymentResult {
+public sealed interface PaymentResult permits Success, Declined, Failure {
 }
 
 /** Kwota z walutą, np. 120.00 PLN. Rekord (slajd 100): pola final, equals, hashCode i toString za darmo. */
@@ -35,7 +35,7 @@ record Failure(Exception cause) implements PaymentResult {
 }
 
 /** Powód odmowy płatności. TODO (6a): zapieczętuj (sealed ... permits ...). */
-interface DeclineReason {
+sealed interface DeclineReason permits InsufficientFunds, CardExpired, FraudSuspected {
 }
 
 /** Za mało pieniędzy na koncie: ile brakuje. */
