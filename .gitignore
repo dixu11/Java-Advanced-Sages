@@ -1,0 +1,6 @@
+/target*/
+/jpms/out*/
+/jpms/image/
+/.idea/
+*.iml
+/mini-shop-report.json

@@ -1,0 +1,1 @@
+Plik do przykładu ze slajdu 13 (try-with-resources z var).
