@@ -27,19 +27,22 @@ public class Reports {
      */
     public static List<Order> load(Path file) throws IOException {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        try (Stream<String> lines = Files.lines(file)) {
+            return lines.skip(1).map(Order::fromCsv).toList();
+        }
     }
 
     /** b) Liczba zamówień w każdym mieście (groupingBy + counting). */
     public static Map<String, Long> countByCity(List<Order> orders) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return orders.stream().collect(Collectors.groupingBy(Order::city, Collectors.counting()));
     }
 
     /** c) Suma kwot w każdej kategorii (groupingBy + summingDouble). */
     public static Map<String, Double> totalByCategory(List<Order> orders) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return orders.stream()
+                .collect(Collectors.groupingBy(Order::category, Collectors.summingDouble(Order::amount)));
     }
 
     /**
@@ -48,13 +51,13 @@ public class Reports {
      */
     public static Map<Boolean, List<Order>> partitionByAmount(List<Order> orders, double threshold) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return orders.stream().collect(Collectors.partitioningBy(o -> o.amount() > threshold));
     }
 
     /** e) Średnia kwota wszystkich zamówień, 0 dla pustej listy (mapToDouble + average). */
     public static double averageAmount(List<Order> orders) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return orders.stream().mapToDouble(Order::amount).average().orElse(0);
     }
 
     /**
@@ -65,7 +68,10 @@ public class Reports {
      */
     public static MinMax minAndMax(List<Order> orders) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return orders.stream().collect(Collectors.teeing(
+                Collectors.mapping(Order::amount, Collectors.minBy(Double::compare)),
+                Collectors.mapping(Order::amount, Collectors.maxBy(Double::compare)),
+                (min, max) -> new MinMax(min.orElseThrow(), max.orElseThrow())));
     }
 
     /**
@@ -74,6 +80,13 @@ public class Reports {
      */
     public static List<String> top3Customers(List<Order> orders) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return orders.stream()
+                .filter(o -> o.status() != Order.Status.CANCELLED)
+                .collect(Collectors.groupingBy(Order::customer, Collectors.summingDouble(Order::amount)))
+                .entrySet().stream()
+                .sorted(Map.Entry.<String, Double>comparingByValue().reversed())
+                .limit(3)
+                .map(Map.Entry::getKey)
+                .toList();
     }
 }
