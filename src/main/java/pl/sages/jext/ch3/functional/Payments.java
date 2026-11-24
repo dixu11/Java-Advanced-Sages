@@ -20,11 +20,15 @@ import java.util.stream.Collectors;
  */
 public class Payments {
 
-    /** Powyżej tej kwoty (bez względu na walutę) płatność idzie do ręcznego sprawdzenia. Dokładnie 10000 to jeszcze zwykła płatność. */
+    /**
+     * Powyżej tej kwoty (bez względu na walutę) płatność idzie do ręcznego sprawdzenia. Dokładnie 10000 to jeszcze zwykła płatność.
+     */
     static final BigDecimal MANUAL_REVIEW_LIMIT = new BigDecimal("10000");
 
-    /** Co sklep robi dalej z zamówieniem (6c). */
-    public enum Action { SHIP, ASK_FOR_ANOTHER_CARD, RETRY_LATER, MANUAL_REVIEW }
+    /**
+     * Co sklep robi dalej z zamówieniem (6c).
+     */
+    public enum Action {SHIP, ASK_FOR_ANOTHER_CARD, RETRY_LATER, MANUAL_REVIEW}
 
     /**
      * 6b) Komunikat dla klienta. Jedno wyrażenie switch, BEZ default, z wzorcami rekordów (slajdy 112-113)
@@ -45,8 +49,17 @@ public class Payments {
      * Kolejność ma znaczenie: Success z guardem musi stać przed zwykłym Success.
      */
     public static String customerMessage(PaymentResult r) {
-        // TODO
-        throw new UnsupportedOperationException("TODO");
+        return switch (r) {
+            case Success(String id, Money(BigDecimal amount, String currency))
+                    when amount.compareTo(MANUAL_REVIEW_LIMIT) > 0 ->
+                    "Płatność przyjęta, czeka na potwierdzenie: " + amount.toPlainString() +" "+ currency;
+            case Success s -> "Zapłacono " + s.paid().amount().toPlainString() +" "+ s.paid().currency();
+            case Declined(InsufficientFunds(Money(BigDecimal amount, String currency))) -> "Brakuje " +
+                    amount.toPlainString() + " " + currency + " na koncie";
+            case Declined(CardExpired expired) -> "Karta wygasła " + expired.expiredOn();
+            case Declined(FraudSuspected _) -> "Płatność odrzucona, skontaktuj się z bankiem";
+            case Failure _ -> "Błąd techniczny, spróbuj ponownie później";
+        };
     }
 
     /**
@@ -58,7 +71,7 @@ public class Payments {
      *     (kilka wzorców po przecinku działa, gdy żaden nie nazywa zmiennej),</li>
      * <li>Declined z FraudSuspected i oceną ryzyka co najmniej 80 → MANUAL_REVIEW,
      *     pozostałe FraudSuspected → ASK_FOR_ANOTHER_CARD,</li>
-     * <li>Failure, którego przyczyną jest {@link java.util.concurrent.TimeoutException} → RETRY_LATER
+     * <li>Failure, którego przyczyną jest {@link TimeoutException} → RETRY_LATER
      *     (we wzorcu rekordu można podać podtyp składowej: {@code case Failure(TimeoutException _)}),
      *     każde inne Failure → MANUAL_REVIEW.</li>
      * </ul>
@@ -67,8 +80,18 @@ public class Payments {
      * (jak String po CharSequence: ogólniejszy wzorzec połyka wszystko, co przyszłoby po nim).
      */
     public static Action nextAction(PaymentResult r) {
-        // TODO
-        throw new UnsupportedOperationException("TODO");
+      return switch (r){
+          case Success s
+                  when s.paid().amount().compareTo(MANUAL_REVIEW_LIMIT) > 0 -> Action.MANUAL_REVIEW;
+          case Success _ -> Action.SHIP;
+          case Declined(InsufficientFunds _), Declined(CardExpired _) -> Action.ASK_FOR_ANOTHER_CARD;
+          case Declined(FraudSuspected fraud) when fraud.riskScore()>= 80 -> Action.MANUAL_REVIEW;
+          case Declined(FraudSuspected _) -> Action.ASK_FOR_ANOTHER_CARD;
+          case Failure(TimeoutException _) -> Action.RETRY_LATER;
+          case Failure _ -> Action.MANUAL_REVIEW;
+
+      };
+
     }
 
     // 6d) Na koniec, bez testu: nowy wariant wyniku.
