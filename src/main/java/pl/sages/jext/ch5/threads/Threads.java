@@ -17,13 +17,13 @@ public class Threads {
     /** a) Zwróć pulę 100 zwykłych (platformowych) wątków: Executors.newFixedThreadPool. */
     public static ExecutorService platformPool() {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return Executors.newFixedThreadPool(100);
     }
 
     /** b) Zwróć executor, który dla każdego zadania tworzy nowy wątek WIRTUALNY. */
     public static ExecutorService virtualPool() {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return Executors.newVirtualThreadPerTaskExecutor();
     }
 
     /**
@@ -37,7 +37,22 @@ public class Threads {
     public static long runTasks(ExecutorService executor, int taskCount, Duration delay)
             throws InterruptedException, ExecutionException {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        try (executor) {
+            List<Future<Boolean>> results = new ArrayList<>();
+            for (int i = 0; i < taskCount; i++) {
+                results.add(executor.submit(() -> {
+                    Thread.sleep(delay);
+                    return Thread.currentThread().isVirtual();
+                }));
+            }
+            long virtualCount = 0;
+            for (Future<Boolean> result : results) {
+                if (result.get()) {
+                    virtualCount++;
+                }
+            }
+            return virtualCount;
+        }
     }
 
     /** Gotowe: porównanie czasów. Uruchom: mvn compile exec:exec -Dmain=pl.sages.jext.ch5.threads.Threads */
