@@ -13,7 +13,7 @@ public class Json {
     /** Zamień płatność na JSON: MAPPER.writeValueAsString(...). */
     public static String toJson(Payment payment) throws JsonProcessingException {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return MAPPER.writeValueAsString(payment);
     }
 
     /**
@@ -22,7 +22,7 @@ public class Json {
      */
     public static Payment fromJson(String json) throws JsonProcessingException {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return MAPPER.readValue(json, Payment.class);
     }
 
     /** Gotowe: pattern matching na odczytanej płatności. */
