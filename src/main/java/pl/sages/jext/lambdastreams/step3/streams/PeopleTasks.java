@@ -27,31 +27,44 @@ public class PeopleTasks {
     /** 1) map: imiona osób w kolejności alfabetycznej */
     public static List<String> namesSorted(List<Person> people) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return people.stream()
+                .map(person -> person.getName())
+                .sorted()
+                .toList();
     }
 
     /** 2) map: miesiące urodzenia (liczbowo, 1-12), w kolejności osób na liście */
     public static List<Integer> birthMonths(List<Person> people) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return people.stream()
+                .map(person -> person.getBirthdate().getMonthValue())
+                .toList();
     }
 
     /** 3) flatMap: ile zwierząt mają te osoby razem */
     public static long countPets(List<Person> people) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return people.stream()
+                .flatMap(person -> person.getPets().stream()) //Stream<Person> -> Stream<Pet>
+                .count();
     }
 
     /** 4) flatMap: łączny wiek wszystkich zwierząt */
     public static int totalPetsAge(List<Person> people) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return people.stream()
+                .flatMap(person -> person.getPets().stream())
+                .mapToInt(pet -> pet.getAge())
+                .sum();
     }
 
     /** 6) mapToInt: średni wiek osób; dla pustej listy -1 */
     public static double averageAge(List<Person> people) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return people.stream()
+                .mapToInt(person -> person.getAge())
+                .average()
+                .orElse(-1);
     }
 
     public static List<Person> samplePeople() {

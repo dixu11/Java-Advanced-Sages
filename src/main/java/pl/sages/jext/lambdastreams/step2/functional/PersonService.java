@@ -23,12 +23,13 @@ public class PersonService {
 
     public void add(Person person) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        people.add(person);
     }
 
     public Optional<Person> findPersonWithShortestName() {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return people.stream()
+                .min(Comparator.comparingInt(person -> person.getName().length()));
     }
 
     public static void main(String[] args) {

@@ -20,20 +20,20 @@ public class MyPerson extends Person {
     @Override
     protected int getRandomCash() {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return RANDOM.nextInt(101);
     }
 
     //aktualna data cofnięta losową ilość lat: od 0 do 100
     @Override
     public LocalDate getRandomBirthDate() {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return LocalDate.now().minusYears(RANDOM.nextInt(101));
     }
 
     //wiek osoby w latach na podstawie jej daty urodzenia
     @Override
     public int getAge() {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return (int) getBirthDate().until(LocalDate.now(), ChronoUnit.YEARS);
     }
 }

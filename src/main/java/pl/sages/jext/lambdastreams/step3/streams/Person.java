@@ -20,7 +20,7 @@ public class Person {
     /** 5) Stwórz w klasie Person metodę która zwraca wiek osoby wyliczając go na podstawie daty */
     public int getAge() {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return (int) birthdate.until(LocalDate.now(), ChronoUnit.YEARS);
     }
 
     public String getName() {

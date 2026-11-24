@@ -48,23 +48,23 @@ public class FiveFunctions {
 
     /** 1) funkcja przyjmująca tekst i zwracająca jego długość */
     public static final Function<String, Integer> TEXT_LENGTH =
-            text -> { throw new UnsupportedOperationException("TODO"); }; // TODO
+            text -> text.length();
 
     /** 2) funkcja sprawdzająca czy przekazany tekst ma minimum 5 znaków */
     public static final Predicate<String> HAS_AT_LEAST_FIVE_CHARS =
-            text -> { throw new UnsupportedOperationException("TODO"); }; // TODO
+            text -> text.length() >= 5;
 
     /** 3) funkcja dostarczająca losową liczbę z przedziału 1-10 */
     public static final Supplier<Integer> RANDOM_ONE_TO_TEN =
-            () -> { throw new UnsupportedOperationException("TODO"); }; // TODO
+            () -> RANDOM.nextInt(10) + 1;
 
     /** 4) funkcja drukująca tekst wielkimi literami */
     public static final Consumer<String> PRINT_UPPER_CASE =
-            text -> { throw new UnsupportedOperationException("TODO"); }; // TODO
+            text -> System.out.println(text.toUpperCase());
 
     /** 5) funkcja porównująca dwa teksty po ilości liter */
     public static final Comparator<String> BY_LENGTH =
-            (s1, s2) -> { throw new UnsupportedOperationException("TODO"); }; // TODO
+            (s1, s2) -> s1.length() - s2.length();
 
     public static void main(String[] args) {
         System.out.println(TEXT_LENGTH.apply("abcd"));

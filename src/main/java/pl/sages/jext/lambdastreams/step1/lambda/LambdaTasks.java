@@ -33,25 +33,33 @@ public class LambdaTasks {
     /** 1a) dodawanie, za pomocą anonimowej klasy. */
     public static Operation addition() {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return new Operation() {
+            @Override
+            public int calculate(int number1, int number2) {
+                return number1 + number2;
+            }
+        };
     }
 
     /** 1b) odejmowanie, za pomocą lambdy. */
     public static Operation subtraction() {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return (number1, number2) -> number1 - number2;
     }
 
     /** 2a) funkcja krzycząca: "Hello" wyświetla "HELLO!". */
     public static Printer shouter() {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return text -> System.out.println(text.toUpperCase() + "!");
     }
 
     /** 2b) trudne: pierwsze litery słów, "Ala ma kota" wyświetla "Amk". */
     public static Printer firstLetters() {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return text -> System.out.println(
+                Arrays.stream(text.trim().split("\\s+"))
+                        .map(word -> word.substring(0, 1))
+                        .collect(Collectors.joining()));
     }
 
     public static void main(String[] args) {

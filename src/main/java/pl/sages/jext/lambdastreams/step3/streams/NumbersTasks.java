@@ -26,31 +26,40 @@ public class NumbersTasks {
     /** 1) forEach: wyświetl wszystkie liczby, każdą w osobnej linii */
     public static void printAll(List<Integer> numbers) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        numbers.forEach(number -> System.out.println(number));
     }
 
     /** 2) stream: posortuj rosnąco i wyświetl, każdą w osobnej linii */
     public static void printSorted(List<Integer> numbers) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        numbers.stream()
+                .sorted()
+                .forEach(number -> System.out.println(number));
     }
 
     /** 3) odfiltruj liczby nieparzyste (zostają parzyste) i policz, ile zostało: count() */
     public static long countEven(List<Integer> numbers) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return numbers.stream()
+                .filter(number -> number % 2 == 0)
+                .count();
     }
 
     /** 4) odfiltruj liczby powyżej 50, pozostałe zbierz do nowej listy */
     public static List<Integer> notAboveFifty(List<Integer> numbers) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return numbers.stream()
+                .filter(number -> number <= 50) // które zostają?
+                .toList();
     }
 
     /** 5) posortuj malejąco i pobierz pierwszą metodą findFirst */
     public static int findFirstDescending(List<Integer> numbers) {
         // TODO
-        throw new UnsupportedOperationException("TODO");
+        return numbers.stream()
+                .sorted((number1, number2) -> number2 - number1) // nowe, krócej: Comparator.reverseOrder()
+                .findFirst()
+                .orElseThrow();
     }
 
     public static void main(String[] args) {
