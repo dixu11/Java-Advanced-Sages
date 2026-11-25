@@ -4,6 +4,8 @@ import java.lang.reflect.Field;
 import java.util.StringJoiner;
 
 /**
+ * Ćwiczenie 2. Sprawdzenie: test {@code Zad02MaskingTest}.
+ *
  * Ćwiczenie 2a (slajdy 42-48): własna adnotacja od zera.
  *
  * Metoda describe() jest gotowa: robi z obiektu tekst do logów, np. Account[login=jan, password=****, ...],
@@ -15,7 +17,7 @@ import java.util.StringJoiner;
  *    (jaki element musi mieć i jakiego typu, skoro kod wywołuje mask.keepLast()?).
  * 3. W klasie Account oznacz pola, których nie wolno pokazać w logach: hasło w całości,
  *    a z numeru karty zostaw widoczne 4 ostatnie cyfry.
- * 4. Uruchom MaskingTest. Jeśli kod się kompiluje, a pola dalej nie są zamaskowane,
+ * 4. Uruchom Zad02MaskingTest. Jeśli kod się kompiluje, a pola dalej nie są zamaskowane,
  *    pomyśl, co musi mieć adnotacja, żeby refleksja zobaczyła ją w czasie działania (slajd 46).
  */
 public class Masking {

@@ -2,7 +2,11 @@ package pl.sages.jext.lambdastreams.step3.streams;
 
 import java.util.Random;
 
-/** Klasa Pet z polem name oraz age (SDA-zaawansowane streamTask2: wiek losowy 1-15). */
+/**
+ * Rozgrzewka, krok 3. Sprawdzenie: test {@code RozgrzewkaPeopleTasksTest}.
+ *
+ * Klasa Pet z polem name oraz age (SDA-zaawansowane streamTask2: wiek losowy 1-15).
+ */
 public class Pet {
 
     private final String name;

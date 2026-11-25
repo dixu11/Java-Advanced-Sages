@@ -7,6 +7,8 @@ import java.util.concurrent.TimeoutException;
 import java.util.stream.Collectors;
 
 /**
+ * Ćwiczenie 6. Sprawdzenie: test {@code Zad06PaymentsTest}.
+ *
  * Ćwiczenie 6b-6e (slajdy 105-117): switch z wzorcami rekordów, zagnieżdżenia, guardy (when) i zmienne nienazwane (_).
  * <p>
  * Jeden wynik płatności, a każdy odbiorca robi z nim co innego: klient dostaje komunikat (6b),

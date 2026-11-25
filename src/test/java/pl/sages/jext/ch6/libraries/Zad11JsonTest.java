@@ -6,8 +6,19 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Ćwiczenie 11 (slajdy 166-168): sealed i rekordy w JSON.
+ * Zadanie NIE jest tutaj: zacznij od klasy {@link pl.sages.jext.ch6.libraries.Payment}
+ * (src/main/java/pl/sages/jext/ch6/libraries/Payment.java).
+ * Ten plik tylko sprawdza Twój wynik: uruchom go zieloną strzałką po rozwiązaniu.
+ * Kolejność pracy:
+ * <ol>
+ * <li>{@code pl.sages.jext.ch6.libraries.Payment} (src/main/java/pl/sages/jext/ch6/libraries/Payment.java)</li>
+ * <li>{@code pl.sages.jext.ch6.libraries.Json} (src/main/java/pl/sages/jext/ch6/libraries/Json.java)</li>
+ * </ol>
+ */
 @DisplayName("Ćw. 11: sealed + rekordy w JSON (Jackson)")
-class JsonTest {
+class Zad11JsonTest {
 
     @Test
     @DisplayName("zapis zawiera pole type")

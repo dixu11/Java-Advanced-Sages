@@ -3,6 +3,8 @@ package pl.sages.jext.ch2.practice;
 import java.util.function.DoubleBinaryOperator;
 
 /**
+ * Ćwiczenie 4. Sprawdzenie: test {@code Zad04OperationTest}.
+ *
  * Ćwiczenie 4 (slajdy 76-80): enum jako fabryka i strategia.
  * Każda stała ma symbol i lambdę, która wykonuje działanie.
  */

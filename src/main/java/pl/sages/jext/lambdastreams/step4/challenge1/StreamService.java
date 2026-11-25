@@ -3,8 +3,10 @@ package pl.sages.jext.lambdastreams.step4.challenge1;
 import java.util.List;
 
 /**
+ * Rozgrzewka, krok 4. Sprawdzenie: test {@code RozgrzewkaMyStreamServiceTest}.
+ *
  * Paczka StreamChallange P1 (Dysk, 31.03.2020; nazwy metod z grupy 120). Tego interfejsu nie zmieniasz.
- * Test: {@code MyStreamServiceTest}.
+ * Test: {@code RozgrzewkaMyStreamServiceTest}.
  */
 public interface StreamService {
 

@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.util.stream.IntStream;
 
 /**
+ * Ćwiczenie 13. Sprawdzenie: test {@code Zad13MiniShopTest}.
+ *
  * Etap c: uruchom po rozwiązaniu validate i process. To ręczny pomiar, poza mvn test.
  * 10 000 poprawnych płatności, każda 50 ms, Semaphore(20). Dwa przebiegi: około 75 s.
  * Pula 10 ogranicza dodatkowo współbieżność do 10. Nie zakładamy z góry przyspieszenia.

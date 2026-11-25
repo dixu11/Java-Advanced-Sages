@@ -11,6 +11,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
+ * Ćwiczenie 7. Sprawdzenie: test {@code Zad07ReportsTest}.
+ *
  * Ćwiczenie 7 (dla chętnych, bez slajdu): NIO i kolektory poza kursem, na pliku src/main/resources/orders.csv.
  * Każda metoda to 1-3 linijki strumienia.
  */

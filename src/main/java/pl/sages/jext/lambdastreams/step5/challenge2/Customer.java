@@ -4,7 +4,11 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
-/** Paczka StreamChallange P2: klient z zamówieniami. */
+/**
+ * Rozgrzewka, krok 5. Sprawdzenie: test {@code RozgrzewkaShopTest}.
+ *
+ * Paczka StreamChallange P2: klient z zamówieniami.
+ */
 public class Customer {
     private final List<Order> orders;
     private final String name;

@@ -1,6 +1,8 @@
 package pl.sages.jext.ch0.setup;
 
 /**
+ * Ćwiczenie 0. Sprawdzenie: test {@code Zad00EnvironmentTest}.
+ *
  * Sprawdzenie środowiska. Uruchom: mvn compile exec:exec
  * (albo zielona strzałka w IntelliJ).
  */

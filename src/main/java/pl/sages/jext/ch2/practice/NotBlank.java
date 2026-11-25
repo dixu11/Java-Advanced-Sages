@@ -5,7 +5,11 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-/** Gotowa adnotacja do ćwiczenia 2b: pole oznaczone @NotBlank nie może być null ani puste. */
+/**
+ * Ćwiczenie 2. Sprawdzenie: test {@code Zad02ValidatorTest}.
+ *
+ * Gotowa adnotacja do ćwiczenia 2b: pole oznaczone @NotBlank nie może być null ani puste.
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 public @interface NotBlank {

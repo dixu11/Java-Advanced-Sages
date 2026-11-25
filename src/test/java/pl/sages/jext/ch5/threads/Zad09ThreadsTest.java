@@ -8,8 +8,18 @@ import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 
+/**
+ * Ćwiczenie 9 (slajdy 140-152): pula wątków i wątki wirtualne.
+ * Zadanie NIE jest tutaj: zacznij od klasy {@link pl.sages.jext.ch5.threads.Threads}
+ * (src/main/java/pl/sages/jext/ch5/threads/Threads.java).
+ * Ten plik tylko sprawdza Twój wynik: uruchom go zieloną strzałką po rozwiązaniu.
+ * Kolejność pracy:
+ * <ol>
+ * <li>{@code pl.sages.jext.ch5.threads.Threads} (src/main/java/pl/sages/jext/ch5/threads/Threads.java)</li>
+ * </ol>
+ */
 @DisplayName("Ćw. 9: wątki wirtualne")
-class ThreadsTest {
+class Zad09ThreadsTest {
 
     @Test
     @DisplayName("pula platformowa: 200 zadań, żadne nie jest wirtualne")

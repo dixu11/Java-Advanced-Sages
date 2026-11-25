@@ -9,8 +9,18 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ * Ćwiczenie 3 (slajdy 68-74): generyki: extends, super i ograniczenia.
+ * Zadanie NIE jest tutaj: zacznij od klasy {@link pl.sages.jext.ch2.practice.Generics}
+ * (src/main/java/pl/sages/jext/ch2/practice/Generics.java).
+ * Ten plik tylko sprawdza Twój wynik: uruchom go zieloną strzałką po rozwiązaniu.
+ * Kolejność pracy:
+ * <ol>
+ * <li>{@code pl.sages.jext.ch2.practice.Generics} (src/main/java/pl/sages/jext/ch2/practice/Generics.java)</li>
+ * </ol>
+ */
 @DisplayName("Ćw. 3: generyki extends i super")
-class GenericsTest {
+class Zad03GenericsTest {
 
     @Test
     @DisplayName("a) suma dla List<Integer> i List<Double>")

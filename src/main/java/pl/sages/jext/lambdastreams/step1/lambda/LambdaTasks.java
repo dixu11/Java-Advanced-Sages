@@ -4,8 +4,10 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 
 /**
+ * Rozgrzewka, krok 1. Sprawdzenie: test {@code RozgrzewkaLambdaTasksTest}.
+ *
  * Zadania z arkusza „Zadania zaawansowane”, sekcja „Wyrażenia lambda”, zad. 1 i 2.
- * Test: {@code LambdaTasksTest}.
+ * Test: {@code RozgrzewkaLambdaTasksTest}.
  * <p>
  * 1. Stwórz interfejs Operation, posiadający metodę abstrakcyjną przyjmującą 2 liczby i zwracającą liczbę.
  *    - za pomocą anonimowej klasy zaimplementuj dodawanie

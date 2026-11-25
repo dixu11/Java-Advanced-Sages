@@ -3,6 +3,8 @@ package pl.sages.jext.ch2.practice;
 import java.util.List;
 
 /**
+ * Ćwiczenie 3. Sprawdzenie: test {@code Zad03GenericsTest}.
+ *
  * Ćwiczenie 3 (slajdy 68-74): wildcardy {@code ? extends} i {@code ? super}.
  * Reguła PECS: Producer Extends, Consumer Super.
  */

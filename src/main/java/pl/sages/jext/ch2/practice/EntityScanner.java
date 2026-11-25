@@ -7,6 +7,8 @@ import pl.sages.jext.ch2.practice.model.Entity;
 import java.util.List;
 
 /**
+ * Ćwiczenie 2. Sprawdzenie: test {@code Zad02ValidatorTest}.
+ *
  * Ćwiczenie 2c, dla chętnych (slajdy 54-60): skanowanie classpath biblioteką ClassGraph.
  */
 public class EntityScanner {

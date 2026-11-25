@@ -11,8 +11,18 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Ćwiczenie 7 (dla chętnych, bez slajdu): NIO i kolektory dla chętnych.
+ * Zadanie NIE jest tutaj: zacznij od klasy {@link pl.sages.jext.ch4.streams.Reports}
+ * (src/main/java/pl/sages/jext/ch4/streams/Reports.java).
+ * Ten plik tylko sprawdza Twój wynik: uruchom go zieloną strzałką po rozwiązaniu.
+ * Kolejność pracy:
+ * <ol>
+ * <li>{@code pl.sages.jext.ch4.streams.Reports} (src/main/java/pl/sages/jext/ch4/streams/Reports.java)</li>
+ * </ol>
+ */
 @DisplayName("Ćw. 7: NIO i kolektory")
-class ReportsTest {
+class Zad07ReportsTest {
 
     private final List<Order> orders = Orders.all();
 

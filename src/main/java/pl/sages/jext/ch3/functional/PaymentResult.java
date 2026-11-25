@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.time.YearMonth;
 
 /**
+ * Ćwiczenie 6. Sprawdzenie: test {@code Zad06PaymentsTest}.
+ *
  * Ćwiczenie 6a (slajdy 100-109): wynik płatności w sklepie jako typ zapieczętowany z rekordami.
  * <p>
  * Płatność kończy się jednym z trzech wyników, a każdy niesie inne dane: sukces ma numer transakcji

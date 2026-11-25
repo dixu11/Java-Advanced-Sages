@@ -8,8 +8,10 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 /**
+ * Rozgrzewka, krok 2. Sprawdzenie: test {@code RozgrzewkaFiveFunctionsTest}.
+ *
  * Krok 2: gotowe interfejsy funkcyjne (SDA-36 Zad33, SDA-zaawansowane FunctionalInterfacesDemo, grupa 120).
- * Test: {@code FiveFunctionsTest}.
+ * Test: {@code RozgrzewkaFiveFunctionsTest}.
  * <p>
  * Stosując gotowe klasy interfejsów funkcyjnych (Function, Consumer, Supplier, Comparator, Predicate)
  * zaimplementuj i przetestuj 5 funkcji:

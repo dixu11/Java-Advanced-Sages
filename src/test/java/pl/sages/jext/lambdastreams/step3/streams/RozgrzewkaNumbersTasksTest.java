@@ -8,8 +8,18 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Rozgrzewka, krok 3 (slajdy 85-139): lambdy i strumienie.
+ * Zadanie NIE jest tutaj: zacznij od klasy {@link pl.sages.jext.lambdastreams.step3.streams.NumbersTasks}
+ * (src/main/java/pl/sages/jext/lambdastreams/step3/streams/NumbersTasks.java).
+ * Ten plik tylko sprawdza Twój wynik: uruchom go zieloną strzałką po rozwiązaniu.
+ * Kolejność pracy:
+ * <ol>
+ * <li>{@code pl.sages.jext.lambdastreams.step3.streams.NumbersTasks} (src/main/java/pl/sages/jext/lambdastreams/step3/streams/NumbersTasks.java)</li>
+ * </ol>
+ */
 @DisplayName("Lambdy i strumienie, krok 3: ArrayList z 10 liczbami")
-class NumbersTasksTest {
+class RozgrzewkaNumbersTasksTest {
 
     private final List<Integer> numbers = NumbersTasks.numbers(); // 56, 1, 22, 88, 44, 33, 77, 88, 1, 99
 

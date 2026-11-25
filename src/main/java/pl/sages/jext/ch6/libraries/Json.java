@@ -4,6 +4,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
+ * Ćwiczenie 11. Sprawdzenie: test {@code Zad11JsonTest}.
+ *
  * Ćwiczenie 11b: zapis i odczyt płatności przez ObjectMapper.
  */
 public class Json {

@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Ćwiczenie 2. Sprawdzenie: test {@code Zad02ValidatorTest}.
+ *
  * Ćwiczenie 2b (slajdy 49-51): prosty walidator oparty na refleksji.
  */
 public class Validator {

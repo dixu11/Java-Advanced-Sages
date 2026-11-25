@@ -7,8 +7,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ * Ćwiczenie 4 (slajdy 76-80): enum jako fabryka i strategia.
+ * Zadanie NIE jest tutaj: zacznij od klasy {@link pl.sages.jext.ch2.practice.Operation}
+ * (src/main/java/pl/sages/jext/ch2/practice/Operation.java).
+ * Ten plik tylko sprawdza Twój wynik: uruchom go zieloną strzałką po rozwiązaniu.
+ * Kolejność pracy:
+ * <ol>
+ * <li>{@code pl.sages.jext.ch2.practice.Operation} (src/main/java/pl/sages/jext/ch2/practice/Operation.java)</li>
+ * </ol>
+ */
 @DisplayName("Ćw. 4: enum jako fabryka i strategia")
-class OperationTest {
+class Zad04OperationTest {
 
     @Test
     @DisplayName("lambdy w stałych enuma")

@@ -6,8 +6,18 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ * Rozgrzewka, krok 2 (slajdy 85-139): lambdy i strumienie.
+ * Zadanie NIE jest tutaj: zacznij od klasy {@link pl.sages.jext.lambdastreams.step2.functional.EquationTasks}
+ * (src/main/java/pl/sages/jext/lambdastreams/step2/functional/EquationTasks.java).
+ * Ten plik tylko sprawdza Twój wynik: uruchom go zieloną strzałką po rozwiązaniu.
+ * Kolejność pracy:
+ * <ol>
+ * <li>{@code pl.sages.jext.lambdastreams.step2.functional.EquationTasks} (src/main/java/pl/sages/jext/lambdastreams/step2/functional/EquationTasks.java)</li>
+ * </ol>
+ */
 @DisplayName("Lambdy i strumienie, krok 2: Equation z mnożeniem i dzieleniem")
-class EquationTasksTest {
+class RozgrzewkaEquationTasksTest {
 
     @Test
     @DisplayName("mnożenie")

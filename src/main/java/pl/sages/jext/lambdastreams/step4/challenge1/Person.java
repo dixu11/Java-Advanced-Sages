@@ -2,7 +2,11 @@ package pl.sages.jext.lambdastreams.step4.challenge1;
 
 import java.time.LocalDate;
 
-/** Paczka StreamChallange P1 (Dysk, 31.03.2020): abstrakcyjna osoba. Tej klasy nie zmieniasz. */
+/**
+ * Rozgrzewka, krok 4. Sprawdzenie: test {@code RozgrzewkaMyStreamServiceTest}.
+ *
+ * Paczka StreamChallange P1 (Dysk, 31.03.2020): abstrakcyjna osoba. Tej klasy nie zmieniasz.
+ */
 public abstract class Person {
 
     private final int id;

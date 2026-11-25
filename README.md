@@ -44,7 +44,7 @@ W wyniku `Java version: 25...` albo wyższa. Jeśli widać starszą wersję Javy
    - **Language level:** `SDK default` albo `25` (bez „Preview”).
 3. **Settings → Build, Execution, Deployment → Build Tools → Maven → Runner → JRE:** „Use Project JDK”.
 4. W panelu Maven (prawa krawędź) kliknij **Reload All Maven Projects**.
-5. Otwórz `src/test/java/pl/sages/jext/ch0/setup/EnvironmentTest.java` i uruchom go zieloną strzałką. **Wszystkie 4 testy muszą być zielone.** To jest ćwiczenie 0.
+5. Otwórz `src/test/java/pl/sages/jext/ch0/setup/Zad00EnvironmentTest.java` i uruchom go zieloną strzałką. **Wszystkie 4 testy muszą być zielone.** To jest ćwiczenie 0.
 
 Procesory adnotacji (Lombok, MapStruct) są skonfigurowane w `pom.xml`. W IntelliJ nic nie trzeba włączać; jeśli pojawi się pytanie o „annotation processing”, kliknij Enable.
 
@@ -53,7 +53,7 @@ Procesory adnotacji (Lombok, MapStruct) są skonfigurowane w `pom.xml`. W Intell
 | Co | Komenda |
 |---|---|
 | Wszystkie testy | `mvn test` |
-| Testy jednego ćwiczenia | `mvn test -Dtest=PaymentsTest` |
+| Testy jednego ćwiczenia | `mvn test -Dtest=Zad06PaymentsTest` |
 | Klasa z metodą `main` | `mvn compile exec:exec -Dmain=pl.sages.jext.ch5.threads.Threads` |
 | Sprawdzenie środowiska | `mvn compile exec:exec` |
 
@@ -63,33 +63,35 @@ Na początku `mvn test` pokazuje dużo czerwonych testów i `BUILD FAILURE`. Tak
 
 Kod ćwiczeń: `src/main/java/pl/sages/jext/...`, testy: `src/test/java/pl/sages/jext/...`. W każdej klasie szukaj `TODO`, a zamiast `throw new UnsupportedOperationException("TODO")` wpisz rozwiązanie. Zadania oznaczone „dla chętnych” można pominąć. Nazwy pakietów, klas, metod i zmiennych są po angielsku, jak w kodzie produkcyjnym; instrukcje w komentarzach i komunikaty testów są po polsku.
 
+Zadanie zawsze jest w klasie z kolumny «Klasa» (src/main/java); klasa `ZadNN…Test` tylko sprawdza wynik.
+
 | Nr | Temat | Slajdy | Klasa (pakiet `pl.sages.jext`) | Test |
 |---|---|---|---|---|
-| 0 | Sprawdzenie środowiska | 7-8 | `ch0.setup.Start` | `EnvironmentTest` |
+| 0 | Sprawdzenie środowiska | 7-8 | `ch0.setup.Start` | `Zad00EnvironmentTest` |
 | 1 | Nowości w Javie: quiz zamiast kodu (13 fragmentów, głosowanie A/B/C) | 11-38 | quiz prowadzi trener na slajdach | |
-| 2 | a) własna adnotacja `@Mask` od zera do gotowego kodu; b) walidator `@NotBlank` refleksją; c) dla chętnych: ClassGraph | 42-60 | `ch2.practice.Masking`, `Account`, `Validator`, `EntityScanner` | `MaskingTest`, `ValidatorTest` |
-| 3 | Generyki: `? extends`, `? super`, ograniczenia | 68-74 | `ch2.practice.Generics` | `GenericsTest` |
-| 4 | Enum jako fabryka i strategia (lambdy w stałych) | 76-80 | `ch2.practice.Operation` | `OperationTest` |
-| 5 | Dla chętnych: łączenie `Predicate` i `Function`, funkcje wyższego rzędu, memoizacja (omówione na slajdach) | 88-97 | `ch3.functional.Functions` | `FunctionsTest` |
-| 6 | Sealed + rekordy + switch: wynik płatności w sklepie (wzorce rekordów, `when`, `_`); e) dla chętnych: raport odmów | 100-117 | `ch3.functional.PaymentResult`, `Payments` | `PaymentsTest` |
-| 7 | Dla chętnych: `Files.lines`, `groupingBy`, `partitioningBy`, `teeing` na CSV zamówień | dla chętnych, bez slajdu | `ch4.streams.Reports` | `ReportsTest` |
-| 8 | Gatherers: `windowFixed`, `windowSliding`, `scan`; d) dla chętnych: własny Gatherer | 137-139 | `ch4.streams.Windows` | `WindowsTest` |
-| 9 | 10 000 zadań: pula wątków kontra wątki wirtualne | 140-152 | `ch5.threads.Threads` | `ThreadsTest` |
-| 10 | Zadania równolegle na wątkach wirtualnych (`Future`, `invokeAny`: pierwszy wygrywa) i `ScopedValue` | 150-154 | `ch5.threads.StructuredTasks` | `StructuredTasksTest` |
-| 11 | Sealed + rekordy do JSON i z powrotem (Jackson) | 166-168 | `ch6.libraries.Payment`, `Json` | `JsonTest` |
+| 2 | a) własna adnotacja `@Mask` od zera do gotowego kodu; b) walidator `@NotBlank` refleksją; c) dla chętnych: ClassGraph | 42-60 | `ch2.practice.Masking` -> `Mask` -> `Account`; b) `Validator` -> `NotBlank` -> `User`; c) `EntityScanner` | `Zad02MaskingTest`, `Zad02ValidatorTest` |
+| 3 | Generyki: `? extends`, `? super`, ograniczenia | 68-74 | `ch2.practice.Generics` | `Zad03GenericsTest` |
+| 4 | Enum jako fabryka i strategia (lambdy w stałych) | 76-80 | `ch2.practice.Operation` | `Zad04OperationTest` |
+| 5 | Dla chętnych: łączenie `Predicate` i `Function`, funkcje wyższego rzędu, memoizacja (omówione na slajdach) | 88-97 | `ch3.functional.Functions` | `Zad05FunctionsTest` |
+| 6 | Sealed + rekordy + switch: wynik płatności w sklepie (wzorce rekordów, `when`, `_`); e) dla chętnych: raport odmów | 100-117 | `ch3.functional.PaymentResult`, `Payments` | `Zad06PaymentsTest` |
+| 7 | Dla chętnych: `Files.lines`, `groupingBy`, `partitioningBy`, `teeing` na CSV zamówień | dla chętnych, bez slajdu | `ch4.streams.Reports` | `Zad07ReportsTest` |
+| 8 | Gatherers: `windowFixed`, `windowSliding`, `scan`; d) dla chętnych: własny Gatherer | 137-139 | `ch4.streams.Windows` | `Zad08WindowsTest` |
+| 9 | 10 000 zadań: pula wątków kontra wątki wirtualne | 140-152 | `ch5.threads.Threads` | `Zad09ThreadsTest` |
+| 10 | Zadania równolegle na wątkach wirtualnych (`Future`, `invokeAny`: pierwszy wygrywa) i `ScopedValue` | 150-154 | `ch5.threads.StructuredTasks` | `Zad10StructuredTasksTest` |
+| 11 | Sealed + rekordy do JSON i z powrotem (Jackson) | 166-168 | `ch6.libraries.Payment`, `Json` | `Zad11JsonTest` |
 | 12 | JPMS w konsoli: trzy moduły i `ServiceLoader` | 178-188 | folder `jpms/` | instrukcja w [jpms/README.md](jpms/README.md) |
-| 13 | Mini-sklep: od JSON-a do raportu, 60-90 minut | powtórka | `ch8.project.MiniShop`, `ReportMapper`, `GatewayBenchmark` | `MiniShopTest` |
+| 13 | Mini-sklep: od JSON-a do raportu, 60-90 minut | powtórka | `ch8.project.MiniShop`, `ReportMapper`, `GatewayBenchmark` | `Zad13MiniShopTest` |
 | pokaz | FFM (`strlen`); pozostały kod pokazu dla chętnych | 173-177 | `ch7.optimization.Demos` | |
 
 **Lambdy i strumienie krok po kroku** (pakiet `pl.sages.jext.lambdastreams`, slajdy 85-139, prowadzi trener): rozgrzewka przed ćwiczeniami 5-8 i zadania dla chętnych. Kolejność jest w numerach pakietów:
 
 | Krok | Temat | Pakiet (`pl.sages.jext.lambdastreams`) | Test |
 |---|---|---|---|
-| 1 | Od klasy do lambdy: przycisk (Sposób I-V), równanie, forEach; zadania Operation i Printer | `step1.lambda` | `LambdaTasksTest` |
-| 2 | 5 funkcji gotowymi interfejsami, dzielenie z wyjątkiem, `Optional` | `step2.functional` | `FiveFunctionsTest`, `EquationTasksTest`, `PersonServiceTest` |
-| 3 | Strumienie: 10 liczb; osoby i zwierzęta (`map`, `flatMap`, `mapToInt`) | `step3.streams` | `NumbersTasksTest`, `PeopleTasksTest` |
-| 4 | StreamChallange P1: `MyStreamService` i `MyPerson` | `step4.challenge1` | `MyStreamServiceTest` |
-| 5 | StreamChallange P2: sklep, klienci, zamówienia, dwie mapy „trudne” | `step5.challenge2` | `ShopTest` |
+| 1 | Od klasy do lambdy: przycisk (Sposób I-V), równanie, forEach; zadania Operation i Printer | `step1.lambda` | `RozgrzewkaLambdaTasksTest` |
+| 2 | 5 funkcji gotowymi interfejsami, dzielenie z wyjątkiem, `Optional` | `step2.functional` | `RozgrzewkaFiveFunctionsTest`, `RozgrzewkaEquationTasksTest`, `RozgrzewkaPersonServiceTest` |
+| 3 | Strumienie: 10 liczb; osoby i zwierzęta (`map`, `flatMap`, `mapToInt`) | `step3.streams` | `RozgrzewkaNumbersTasksTest`, `RozgrzewkaPeopleTasksTest` |
+| 4 | StreamChallange P1: `MyStreamService` i `MyPerson` | `step4.challenge1` | `RozgrzewkaMyStreamServiceTest` |
+| 5 | StreamChallange P2: sklep, klienci, zamówienia, dwie mapy „trudne” | `step5.challenge2` | `RozgrzewkaShopTest` |
 
 Dane do ćwiczeń 5 i 7: rekord `data.Order` i plik `src/main/resources/orders.csv` (24 zamówienia, separator `;`). Gotowa lista: `Orders.all()`.
 
@@ -97,7 +99,7 @@ Dane do ćwiczeń 5 i 7: rekord `data.Order` i plik `src/main/resources/orders.c
 
 **Ćwiczenie 7:** dla chętnych, bez slajdu. Zaawansowane kolektory są poza kursem, także punkt f) z `teeing`.
 
-**ScopedValue (ćw. 10c):** slajdy 150-154 uzupełniają ThreadLocal i pokazują StructuredTaskScope; ScopedValue jest stabilne od Javy 25 (JEP 506).
+**ScopedValue (ćw. 10c):** slajdy 150-151 pokazują ScopedValue, stabilne od Javy 25 (JEP 506). StructuredTaskScope jest na slajdach 153-154.
 
 ### Rozwiązania przy zadaniach
 
@@ -105,7 +107,7 @@ Pod każdym zadaniem leży pełne rozwiązanie w komentarzach liniowych. Usuń o
 
 ### Ćwiczenie 13. Mini-sklep: od JSON-a do raportu
 
-Pakiet `pl.sages.jext.ch8.project`. Wszystkie dane są fikcyjne. Pracuj kolejno, uruchamiając wybrany test: `mvn -o test -Dtest=MiniShopTest#loadOrders` (zmień nazwę metody według tabeli). Każdy etap zaczyna z czerwonym testem. Modele danych są gotowe, zadania są w MiniShop i ReportMapper. Używamy wyłącznie rekordów, sealed, switch ze wzorcami i when, Jacksona, strumieni, gathererów, wątków wirtualnych, Semaphore i MapStruct, znanych z kursu.
+Pakiet `pl.sages.jext.ch8.project`. Wszystkie dane są fikcyjne. Pracuj kolejno, uruchamiając wybrany test: `mvn -o test -Dtest=Zad13MiniShopTest#loadOrders` (zmień nazwę metody według tabeli). Każdy etap zaczyna z czerwonym testem. Modele danych są gotowe, zadania są w MiniShop i ReportMapper. Używamy wyłącznie rekordów, sealed, switch ze wzorcami i when, Jacksona, strumieni, gathererów, wątków wirtualnych, Semaphore i MapStruct, znanych z kursu.
 
 | Etap | Minuty | Zadanie i warunek ukończenia | Test |
 |---|---:|---|---|

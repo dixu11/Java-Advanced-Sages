@@ -15,8 +15,21 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Rozgrzewka, krok 4 (slajdy 85-139): lambdy i strumienie.
+ * Zadanie NIE jest tutaj: zacznij od klasy {@link pl.sages.jext.lambdastreams.step4.challenge1.MyStreamService}
+ * (src/main/java/pl/sages/jext/lambdastreams/step4/challenge1/MyStreamService.java).
+ * Ten plik tylko sprawdza Twój wynik: uruchom go zieloną strzałką po rozwiązaniu.
+ * Kolejność pracy:
+ * <ol>
+ * <li>{@code pl.sages.jext.lambdastreams.step4.challenge1.MyStreamService} (src/main/java/pl/sages/jext/lambdastreams/step4/challenge1/MyStreamService.java)</li>
+ * <li>{@code pl.sages.jext.lambdastreams.step4.challenge1.MyPerson} (src/main/java/pl/sages/jext/lambdastreams/step4/challenge1/MyPerson.java)</li>
+ * <li>{@code pl.sages.jext.lambdastreams.step4.challenge1.StreamService} (src/main/java/pl/sages/jext/lambdastreams/step4/challenge1/StreamService.java)</li>
+ * <li>{@code pl.sages.jext.lambdastreams.step4.challenge1.Person} (src/main/java/pl/sages/jext/lambdastreams/step4/challenge1/Person.java)</li>
+ * </ol>
+ */
 @DisplayName("Lambdy i strumienie, krok 4: StreamChallange P1 (MyStreamService i MyPerson)")
-class MyStreamServiceTest {
+class RozgrzewkaMyStreamServiceTest {
 
     private static final List<String> NAMES = List.of("Marcin", "Zbyszek", "Kasia", "Zosia", "Kasia", "Magda", "Iza");
     private static final int[] PRIME_NUMBERS = {2, 79, 83, 41, 43, 47, 53, 59, 13, 17, 83, 31,

@@ -17,8 +17,19 @@ import java.util.stream.Collectors;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Ćwiczenie 6 (slajdy 100-117): sealed, rekordy i switch z wzorcami.
+ * Zadanie NIE jest tutaj: zacznij od klasy {@link pl.sages.jext.ch3.functional.PaymentResult}
+ * (src/main/java/pl/sages/jext/ch3/functional/PaymentResult.java).
+ * Ten plik tylko sprawdza Twój wynik: uruchom go zieloną strzałką po rozwiązaniu.
+ * Kolejność pracy:
+ * <ol>
+ * <li>{@code pl.sages.jext.ch3.functional.PaymentResult} (src/main/java/pl/sages/jext/ch3/functional/PaymentResult.java)</li>
+ * <li>{@code pl.sages.jext.ch3.functional.Payments} (src/main/java/pl/sages/jext/ch3/functional/Payments.java)</li>
+ * </ol>
+ */
 @DisplayName("Ćw. 6: wynik płatności (sealed, rekordy, switch z wzorcami)")
-class PaymentsTest {
+class Zad06PaymentsTest {
 
     private static Money pln(String amount) {
         return new Money(new BigDecimal(amount), "PLN");
