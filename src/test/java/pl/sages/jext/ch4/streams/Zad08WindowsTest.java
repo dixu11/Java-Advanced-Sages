@@ -8,8 +8,18 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Ćwiczenie 8 (slajdy 137-139): gatherery i okna strumienia.
+ * Zadanie NIE jest tutaj: zacznij od klasy {@link pl.sages.jext.ch4.streams.Windows}
+ * (src/main/java/pl/sages/jext/ch4/streams/Windows.java).
+ * Ten plik tylko sprawdza Twój wynik: uruchom go zieloną strzałką po rozwiązaniu.
+ * Kolejność pracy:
+ * <ol>
+ * <li>{@code pl.sages.jext.ch4.streams.Windows} (src/main/java/pl/sages/jext/ch4/streams/Windows.java)</li>
+ * </ol>
+ */
 @DisplayName("Ćw. 8: stream gatherers")
-class WindowsTest {
+class Zad08WindowsTest {
 
     @Test
     @DisplayName("a) paczki windowFixed")

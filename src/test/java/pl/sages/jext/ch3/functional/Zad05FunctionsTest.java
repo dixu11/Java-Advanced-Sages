@@ -13,8 +13,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Ćwiczenie 5 (slajdy 88-97): Predicate, Function i memoizacja dla chętnych.
+ * Zadanie NIE jest tutaj: zacznij od klasy {@link pl.sages.jext.ch3.functional.Functions}
+ * (src/main/java/pl/sages/jext/ch3/functional/Functions.java).
+ * Ten plik tylko sprawdza Twój wynik: uruchom go zieloną strzałką po rozwiązaniu.
+ * Kolejność pracy:
+ * <ol>
+ * <li>{@code pl.sages.jext.ch3.functional.Functions} (src/main/java/pl/sages/jext/ch3/functional/Functions.java)</li>
+ * </ol>
+ */
 @DisplayName("Ćw. 5: Predicate i Function")
-class FunctionsTest {
+class Zad05FunctionsTest {
 
     private final List<Order> orders = Orders.all();
     private final Order first = orders.getFirst(); // 1, Anna Kowalska, Warszawa, 120.50, SHIPPED

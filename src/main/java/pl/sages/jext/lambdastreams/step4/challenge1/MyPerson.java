@@ -5,6 +5,8 @@ import java.time.temporal.ChronoUnit;
 import java.util.Random;
 
 /**
+ * Rozgrzewka, krok 4. Sprawdzenie: test {@code RozgrzewkaMyStreamServiceTest}.
+ *
  * Twoja implementacja klasy Person: zaimplementuj i przetestuj jej trzy abstrakcyjne metody.
  * nowe: szkielet klasy jest gotowy, żeby testy się kompilowały.
  */

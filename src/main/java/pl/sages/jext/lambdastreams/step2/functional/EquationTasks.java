@@ -1,8 +1,10 @@
 package pl.sages.jext.lambdastreams.step2.functional;
 
 /**
+ * Rozgrzewka, krok 2. Sprawdzenie: test {@code RozgrzewkaEquationTasksTest}.
+ *
  * Arkusz „Zadania zaawansowane”, sekcja „Lambda, optional”, zad. 1 (rozwiązanie jak w SDA-zaawansowane EquationDemo).
- * Test: {@code EquationTasksTest}.
+ * Test: {@code RozgrzewkaEquationTasksTest}.
  * <p>
  * Stwórz interfejs Equation z metodą execute przyjmującą dwie wartości double i zwracającą double.
  * Za pomocą lambdy zdefiniuj dwie funkcje implementujące tę metodę. Jedna ma wykonywać mnożenie a druga

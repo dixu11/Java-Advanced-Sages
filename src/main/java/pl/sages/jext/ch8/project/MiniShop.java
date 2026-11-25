@@ -14,9 +14,11 @@ import java.util.stream.Collectors;
 import java.util.stream.Gatherers;
 
 /**
+ * Ćwiczenie 13. Sprawdzenie: test {@code Zad13MiniShopTest}.
+ *
  * Ćwiczenie 13: Mini-sklep: od JSON-a do raportu. Etapy a-d: 60 minut,
  * partie d+: kolejne 10, DTO e: kolejne 20. Modele i bramka są gotowe.
- * Rozwiązuj po kolei, sprawdzając metody MiniShopTest wskazane w README.
+ * Rozwiązuj po kolei, sprawdzając metody Zad13MiniShopTest wskazane w README.
  */
 public final class MiniShop {
     public static final BigDecimal TRANSFER_LIMIT = new BigDecimal("1000.00");

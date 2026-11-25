@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
+ * Ćwiczenie 10. Sprawdzenie: test {@code Zad10StructuredTasksTest}.
+ *
  * Gotowe "zdalne usługi" do ćwiczenia 10 (nie zmieniaj). Każde wywołanie trwa ok. 300 ms.
  * Id ujemne oznacza błąd usługi.
  */

@@ -12,8 +12,18 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Rozgrzewka, krok 2 (slajdy 85-139): lambdy i strumienie.
+ * Zadanie NIE jest tutaj: zacznij od klasy {@link pl.sages.jext.lambdastreams.step2.functional.FiveFunctions}
+ * (src/main/java/pl/sages/jext/lambdastreams/step2/functional/FiveFunctions.java).
+ * Ten plik tylko sprawdza Twój wynik: uruchom go zieloną strzałką po rozwiązaniu.
+ * Kolejność pracy:
+ * <ol>
+ * <li>{@code pl.sages.jext.lambdastreams.step2.functional.FiveFunctions} (src/main/java/pl/sages/jext/lambdastreams/step2/functional/FiveFunctions.java)</li>
+ * </ol>
+ */
 @DisplayName("Lambdy i strumienie, krok 2: 5 funkcji gotowymi interfejsami")
-class FiveFunctionsTest {
+class RozgrzewkaFiveFunctionsTest {
 
     @Test
     @DisplayName("1) Function: długość tekstu")

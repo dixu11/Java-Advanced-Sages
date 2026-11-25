@@ -8,7 +8,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * Paczka StreamChallange P2: sklep i polecenia. Dane: {@link Main#sampleShop()}. Test: {@code ShopTest}.
+ * Rozgrzewka, krok 5. Sprawdzenie: test {@code RozgrzewkaShopTest}.
+ *
+ * Paczka StreamChallange P2: sklep i polecenia. Dane: {@link Main#sampleShop()}. Test: {@code RozgrzewkaShopTest}.
  * <p>
  * Polecenia z oryginału są nad metodami. nowe: każda metoda ma już nazwę i typ zwracany (żeby test się
  * kompilował); w nawiasach doprecyzowanie, jak liczy rozwiązanie (tak jak w grupie 120).

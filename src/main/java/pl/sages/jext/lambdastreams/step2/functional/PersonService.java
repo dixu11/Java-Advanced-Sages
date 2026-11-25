@@ -6,8 +6,10 @@ import java.util.List;
 import java.util.Optional;
 
 /**
+ * Rozgrzewka, krok 2. Sprawdzenie: test {@code RozgrzewkaPersonServiceTest}.
+ *
  * Arkusz „Zadania zaawansowane”, sekcja „Lambda, optional”, zad. 3 (SDA-zaawansowane optionalTask).
- * Test: {@code PersonServiceTest}.
+ * Test: {@code RozgrzewkaPersonServiceTest}.
  * <p>
  * Stwórz prosty obiekt Person zawierający pole name oraz prostą metodę hello() wyświetlającą komunikat
  * z imieniem. Stwórz klasę PersonService która będzie przechowywać osoby, zaimplementuj w tym celu metodę

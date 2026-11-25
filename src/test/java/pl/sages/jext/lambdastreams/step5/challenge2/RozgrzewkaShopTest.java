@@ -14,8 +14,23 @@ import java.util.stream.IntStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Rozgrzewka, krok 5 (slajdy 85-139): lambdy i strumienie.
+ * Zadanie NIE jest tutaj: zacznij od klasy {@link pl.sages.jext.lambdastreams.step5.challenge2.Shop}
+ * (src/main/java/pl/sages/jext/lambdastreams/step5/challenge2/Shop.java).
+ * Ten plik tylko sprawdza Twój wynik: uruchom go zieloną strzałką po rozwiązaniu.
+ * Kolejność pracy:
+ * <ol>
+ * <li>{@code pl.sages.jext.lambdastreams.step5.challenge2.Shop} (src/main/java/pl/sages/jext/lambdastreams/step5/challenge2/Shop.java)</li>
+ * <li>{@code pl.sages.jext.lambdastreams.step5.challenge2.Main} (src/main/java/pl/sages/jext/lambdastreams/step5/challenge2/Main.java)</li>
+ * <li>{@code pl.sages.jext.lambdastreams.step5.challenge2.Customer} (src/main/java/pl/sages/jext/lambdastreams/step5/challenge2/Customer.java)</li>
+ * <li>{@code pl.sages.jext.lambdastreams.step5.challenge2.Order} (src/main/java/pl/sages/jext/lambdastreams/step5/challenge2/Order.java)</li>
+ * <li>{@code pl.sages.jext.lambdastreams.step5.challenge2.Product} (src/main/java/pl/sages/jext/lambdastreams/step5/challenge2/Product.java)</li>
+ * <li>{@code pl.sages.jext.lambdastreams.step5.challenge2.Country} (src/main/java/pl/sages/jext/lambdastreams/step5/challenge2/Country.java)</li>
+ * </ol>
+ */
 @DisplayName("Lambdy i strumienie, krok 5: StreamChallange P2 (sklep)")
-class ShopTest {
+class RozgrzewkaShopTest {
 
     private final Shop shop = Main.sampleShop();
 

@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Rozgrzewka, krok 3. Sprawdzenie: test {@code RozgrzewkaNumbersTasksTest}.
+ *
  * Krok 3: arkusz „Zadania zaawansowane”, sekcja „Stream”, zad. 1 (rozwiązanie jak w grupie 120, Stream2).
- * Test: {@code NumbersTasksTest}.
+ * Test: {@code RozgrzewkaNumbersTasksTest}.
  * <p>
  * Przygotuj ArrayList z 10 liczbami z przedziału 0-100.
  * <ol>

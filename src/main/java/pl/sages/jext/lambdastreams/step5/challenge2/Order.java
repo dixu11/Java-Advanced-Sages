@@ -3,7 +3,11 @@ package pl.sages.jext.lambdastreams.step5.challenge2;
 import java.time.LocalDateTime;
 import java.util.List;
 
-/** Paczka StreamChallange P2: zamówienie z listą produktów i czasem złożenia. */
+/**
+ * Rozgrzewka, krok 5. Sprawdzenie: test {@code RozgrzewkaShopTest}.
+ *
+ * Paczka StreamChallange P2: zamówienie z listą produktów i czasem złożenia.
+ */
 public class Order {
     private final List<Product> products;
     private final LocalDateTime orderTime;

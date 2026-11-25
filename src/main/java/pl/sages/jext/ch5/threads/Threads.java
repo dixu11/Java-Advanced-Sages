@@ -9,6 +9,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 /**
+ * Ćwiczenie 9. Sprawdzenie: test {@code Zad09ThreadsTest}.
+ *
  * Ćwiczenie 9 (slajdy 140-143, 146-147, 149, 152): 10 000 zadań na puli wątków platformowych i na wątkach wirtualnych.
  * Każde zadanie "czeka na I/O" (Thread.sleep), a potem zwraca, czy działało na wątku wirtualnym.
  */

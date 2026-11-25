@@ -1,6 +1,10 @@
 package pl.sages.jext.lambdastreams.step5.challenge2;
 
-/** Paczka StreamChallange P2: produkt. amount to ilość sztuk, price to cena za sztukę. */
+/**
+ * Rozgrzewka, krok 5. Sprawdzenie: test {@code RozgrzewkaShopTest}.
+ *
+ * Paczka StreamChallange P2: produkt. amount to ilość sztuk, price to cena za sztukę.
+ */
 public class Product {
     private final String name;
     private final int amount;

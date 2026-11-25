@@ -8,8 +8,20 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Rozgrzewka, krok 3 (slajdy 85-139): lambdy i strumienie.
+ * Zadanie NIE jest tutaj: zacznij od klasy {@link pl.sages.jext.lambdastreams.step3.streams.PeopleTasks}
+ * (src/main/java/pl/sages/jext/lambdastreams/step3/streams/PeopleTasks.java).
+ * Ten plik tylko sprawdza Twój wynik: uruchom go zieloną strzałką po rozwiązaniu.
+ * Kolejność pracy:
+ * <ol>
+ * <li>{@code pl.sages.jext.lambdastreams.step3.streams.PeopleTasks} (src/main/java/pl/sages/jext/lambdastreams/step3/streams/PeopleTasks.java)</li>
+ * <li>{@code pl.sages.jext.lambdastreams.step3.streams.Person} (src/main/java/pl/sages/jext/lambdastreams/step3/streams/Person.java)</li>
+ * <li>{@code pl.sages.jext.lambdastreams.step3.streams.Pet} (src/main/java/pl/sages/jext/lambdastreams/step3/streams/Pet.java)</li>
+ * </ol>
+ */
 @DisplayName("Lambdy i strumienie, krok 3: Person i Pet, map, flatMap, mapToInt")
-class PeopleTasksTest {
+class RozgrzewkaPeopleTasksTest {
 
     // Artur (3 zwierzęta: 7, 2, 10 lat), Anna (bez zwierząt), Adam (1 zwierzę: 3 lata)
     private final List<Person> people = PeopleTasks.samplePeople();

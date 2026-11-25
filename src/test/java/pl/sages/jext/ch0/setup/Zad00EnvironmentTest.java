@@ -10,11 +10,20 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
+ * Ćwiczenie 0 (slajdy 7-8): sprawdzenie środowiska.
+ * Zadanie NIE jest tutaj: zacznij od klasy {@link pl.sages.jext.ch0.setup.Start}
+ * (src/main/java/pl/sages/jext/ch0/setup/Start.java).
+ * Ten plik tylko sprawdza Twój wynik: uruchom go zieloną strzałką po rozwiązaniu.
+ * Kolejność pracy:
+ * <ol>
+ * <li>{@code pl.sages.jext.ch0.setup.Start} (src/main/java/pl/sages/jext/ch0/setup/Start.java)</li>
+ * </ol>
+ *
  * Ćwiczenie 0: ten test ma być ZIELONY od razu po otwarciu projektu.
  * Jeśli jest czerwony, środowisko nie jest gotowe (patrz README, sekcja "Gdy coś nie działa").
  */
 @DisplayName("Ćw. 0: środowisko")
-class EnvironmentTest {
+class Zad00EnvironmentTest {
 
     @Test
     @DisplayName("Java w wersji 25 lub nowszej")

@@ -4,6 +4,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 /**
+ * Ćwiczenie 13. Sprawdzenie: test {@code Zad13MiniShopTest}.
+ *
  * Etap e (dla chętnych): zmień metody domyślne na deklaracje metod MapStruct.
  * Procesor wygeneruje implementację. DTO nie może zawierać danych karty.
  * Usuń fragment SZKIELET, a następnie odkomentuj deklarację pod nim.

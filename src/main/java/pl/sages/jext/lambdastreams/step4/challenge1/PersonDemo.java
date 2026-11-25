@@ -21,7 +21,7 @@ public class PersonDemo {
 
         //miejsce na Twoje testy zaimplementowanych metod. Jeśli umiesz możesz wykonać testy jednostkowe udowadniające
         //poprawne działanie zaimplementowanych metod
-        // nowe: testy jednostkowe już są, MyStreamServiceTest
+        // nowe: testy jednostkowe już są, RozgrzewkaMyStreamServiceTest
         streamService.sortAndPrint(names);
         System.out.println(streamService.distinctAndSumNumbers(primeNumbers));
 

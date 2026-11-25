@@ -9,6 +9,8 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
+ * Ćwiczenie 5. Sprawdzenie: test {@code Zad05FunctionsTest}.
+ *
  * Ćwiczenie 5 (slajdy 88-97): łączenie Predicate i Function, funkcje wyższego rzędu, memoizacja.
  * Dane: rekord Order (pakiet pl.sages.jext.data), lista z Orders.all().
  */

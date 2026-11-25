@@ -15,8 +15,27 @@ import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Ćwiczenie 13 (powtórka, bez osobnego slajdu): Mini-sklep: od JSON-a do raportu, powtórka kursu.
+ * Zadanie NIE jest tutaj: zacznij od klasy {@link pl.sages.jext.ch8.project.MiniShop}
+ * (src/main/java/pl/sages/jext/ch8/project/MiniShop.java).
+ * Ten plik tylko sprawdza Twój wynik: uruchom go zieloną strzałką po rozwiązaniu.
+ * Kolejność pracy:
+ * <ol>
+ * <li>{@code pl.sages.jext.ch8.project.MiniShop} (src/main/java/pl/sages/jext/ch8/project/MiniShop.java)</li>
+ * <li>{@code pl.sages.jext.ch8.project.Payment} (src/main/java/pl/sages/jext/ch8/project/Payment.java)</li>
+ * <li>{@code pl.sages.jext.ch8.project.Order} (src/main/java/pl/sages/jext/ch8/project/Order.java)</li>
+ * <li>{@code pl.sages.jext.ch8.project.OrderResult} (src/main/java/pl/sages/jext/ch8/project/OrderResult.java)</li>
+ * <li>{@code pl.sages.jext.ch8.project.PaymentGateway} (src/main/java/pl/sages/jext/ch8/project/PaymentGateway.java)</li>
+ * <li>{@code pl.sages.jext.ch8.project.GatewayBenchmark} (src/main/java/pl/sages/jext/ch8/project/GatewayBenchmark.java)</li>
+ * <li>{@code pl.sages.jext.ch8.project.Report} (src/main/java/pl/sages/jext/ch8/project/Report.java)</li>
+ * <li>{@code pl.sages.jext.ch8.project.ReportMapper} (src/main/java/pl/sages/jext/ch8/project/ReportMapper.java)</li>
+ * <li>{@code pl.sages.jext.ch8.project.OrderDto} (src/main/java/pl/sages/jext/ch8/project/OrderDto.java)</li>
+ * <li>{@code pl.sages.jext.ch8.project.ReportDto} (src/main/java/pl/sages/jext/ch8/project/ReportDto.java)</li>
+ * </ol>
+ */
 @DisplayName("Ćw. 13: Mini-sklep: od JSON-a do raportu")
-class MiniShopTest {
+class Zad13MiniShopTest {
     @TempDir Path temp;
 
     private Order order(String id, String customer, String amount, Payment payment) {

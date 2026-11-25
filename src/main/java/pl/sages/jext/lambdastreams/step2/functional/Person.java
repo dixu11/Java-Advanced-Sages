@@ -1,6 +1,10 @@
 package pl.sages.jext.lambdastreams.step2.functional;
 
-/** Prosty obiekt Person z polem name i metodą hello() (arkusz, „Lambda, optional”, zad. 3). */
+/**
+ * Rozgrzewka, krok 2. Sprawdzenie: test {@code RozgrzewkaPersonServiceTest}.
+ *
+ * Prosty obiekt Person z polem name i metodą hello() (arkusz, „Lambda, optional”, zad. 3).
+ */
 public class Person {
 
     private final String name;

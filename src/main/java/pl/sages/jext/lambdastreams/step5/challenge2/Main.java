@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Rozgrzewka, krok 5. Sprawdzenie: test {@code RozgrzewkaShopTest}.
+ *
  * Paczka StreamChallange P2: dane sklepu (oryginalne produkty, zamówienia i klienci z Main).
  * nowe: zamówienia mają różne daty (2, 10, 3, 20 i 1 dzień temu), a klienci różne miesiące urodzenia
  * (wiek bez zmian), żeby zadania z tygodniem i z mapą miesięcy miały sens.

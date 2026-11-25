@@ -1,6 +1,10 @@
 package pl.sages.jext.ch2.practice;
 
-/** Klasa do walidacji w ćwiczeniu 2 (gotowa, nie zmieniaj). */
+/**
+ * Ćwiczenie 2. Sprawdzenie: test {@code Zad02ValidatorTest}.
+ *
+ * Klasa do walidacji w ćwiczeniu 2 (gotowa, nie zmieniaj).
+ */
 public class User {
 
     @NotBlank

@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
+ * Ćwiczenie 11. Sprawdzenie: test {@code Zad11JsonTest}.
+ *
  * Ćwiczenie 11a (slajdy 166-168): hierarchia sealed + rekordy w JSON (Jackson).
  *
  * TODO: Jackson przy odczycie nie wie, czy {"amount":...} to Transfer, czy Card.

@@ -5,6 +5,8 @@ import java.util.stream.Gatherer;
 import java.util.stream.Gatherers;
 
 /**
+ * Ćwiczenie 8. Sprawdzenie: test {@code Zad08WindowsTest}.
+ *
  * Ćwiczenie 8 (slajdy 137-139): stream gatherers (finalne od JDK 24).
  */
 public class Windows {

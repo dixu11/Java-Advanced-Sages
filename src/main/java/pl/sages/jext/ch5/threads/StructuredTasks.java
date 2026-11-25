@@ -12,6 +12,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 /**
+ * Ćwiczenie 10. Sprawdzenie: test {@code Zad10StructuredTasksTest}.
+ *
  * Ćwiczenie 10 (slajdy 150-154): kilka zadań naraz na wątkach wirtualnych i ScopedValue,
  * tylko stabilnym API Javy 25. StructuredTaskScope ze slajdów 153-154 jest w Javie 25 jeszcze
  * w wersji preview, więc to samo robimy tu zwykłym ExecutorService.
@@ -55,7 +57,7 @@ public class StructuredTasks {
     }
 
     // ---------------------------------------------------------------------------------------------
-    // c) ScopedValue: następca ThreadLocal dla wątków wirtualnych (brak slajdu, patrz README).
+    // c) ScopedValue: następca ThreadLocal dla wątków wirtualnych (slajdy 150-151).
 
     /** "Kto teraz obsługuje żądanie": ustawiane tylko na czas wywołania, niezmienne w jego trakcie. */
     public static final ScopedValue<String> CURRENT_USER = ScopedValue.newInstance();

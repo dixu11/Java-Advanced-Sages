@@ -6,7 +6,11 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-/** Pole, którego wartość nie może trafić do logów. */
+/**
+ * Ćwiczenie 2. Sprawdzenie: test {@code Zad02MaskingTest}.
+ *
+ * Pole, którego wartość nie może trafić do logów.
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 public @interface Mask {

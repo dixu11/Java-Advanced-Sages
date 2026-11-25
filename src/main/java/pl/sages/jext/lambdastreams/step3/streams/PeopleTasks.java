@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Rozgrzewka, krok 3. Sprawdzenie: test {@code RozgrzewkaPeopleTasksTest}.
+ *
  * Krok 3: arkusz „Zadania zaawansowane”, sekcja „Stream”, zad. 2 (SDA-zaawansowane streamTask2).
- * Test: {@code PeopleTasksTest}.
+ * Test: {@code RozgrzewkaPeopleTasksTest}.
  * <p>
  * Stwórz klasę Pet z polem name oraz age. Stwórz 4 instancje tej klasy (obiekty) w main. Stwórz prostą klasę
  * Person z polami name, birthday oraz listą zwierząt pets (List&lt;Pet&gt;). Stwórz 3 osoby, jedna z 3 zwierzętami

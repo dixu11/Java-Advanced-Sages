@@ -16,8 +16,20 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
+/**
+ * Ćwiczenie 2 (slajdy 42-48): własna adnotacja @Mask.
+ * Zadanie NIE jest tutaj: zacznij od klasy {@link pl.sages.jext.ch2.practice.Masking}
+ * (src/main/java/pl/sages/jext/ch2/practice/Masking.java).
+ * Ten plik tylko sprawdza Twój wynik: uruchom go zieloną strzałką po rozwiązaniu.
+ * Kolejność pracy:
+ * <ol>
+ * <li>{@code pl.sages.jext.ch2.practice.Masking} (src/main/java/pl/sages/jext/ch2/practice/Masking.java)</li>
+ * <li>{@code pl.sages.jext.ch2.practice.Mask} (src/main/java/pl/sages/jext/ch2/practice/Mask.java)</li>
+ * <li>{@code pl.sages.jext.ch2.practice.Account} (src/main/java/pl/sages/jext/ch2/practice/Account.java)</li>
+ * </ol>
+ */
 @DisplayName("Ćw. 2a: własna adnotacja @Mask")
-class MaskingTest {
+class Zad02MaskingTest {
 
     private static final String MASK = "pl.sages.jext.ch2.practice.Mask";
 

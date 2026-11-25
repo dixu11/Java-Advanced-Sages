@@ -5,6 +5,8 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
+ * Rozgrzewka, krok 4. Sprawdzenie: test {@code RozgrzewkaMyStreamServiceTest}.
+ *
  * Twoja implementacja {@link StreamService}. Polecenia są przy metodach interfejsu.
  * nowe: szkielet klasy jest gotowy, żeby testy się kompilowały.
  */

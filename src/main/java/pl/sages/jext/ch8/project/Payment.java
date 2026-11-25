@@ -3,7 +3,11 @@ package pl.sages.jext.ch8.project;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-/** Gotowy model do etapu a: pole type w JSON wybiera wariant płatności. */
+/**
+ * Ćwiczenie 13. Sprawdzenie: test {@code Zad13MiniShopTest}.
+ *
+ * Gotowy model do etapu a: pole type w JSON wybiera wariant płatności.
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
 @JsonSubTypes({
     @JsonSubTypes.Type(value = Payment.Card.class, name = "card"),

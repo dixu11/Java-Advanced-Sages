@@ -4,7 +4,11 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
-/** Prosta klasa Person z polami name, birthdate oraz listą zwierząt pets (SDA-zaawansowane streamTask2). */
+/**
+ * Rozgrzewka, krok 3. Sprawdzenie: test {@code RozgrzewkaPeopleTasksTest}.
+ *
+ * Prosta klasa Person z polami name, birthdate oraz listą zwierząt pets (SDA-zaawansowane streamTask2).
+ */
 public class Person {
 
     private final String name;

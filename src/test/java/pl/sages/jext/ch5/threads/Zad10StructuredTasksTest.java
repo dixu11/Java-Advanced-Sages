@@ -12,8 +12,19 @@ import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 
+/**
+ * Ćwiczenie 10 (slajdy 150-154): zadania równoległe i ScopedValue (ScopedValue: slajdy 150-151).
+ * Zadanie NIE jest tutaj: zacznij od klasy {@link pl.sages.jext.ch5.threads.StructuredTasks}
+ * (src/main/java/pl/sages/jext/ch5/threads/StructuredTasks.java).
+ * Ten plik tylko sprawdza Twój wynik: uruchom go zieloną strzałką po rozwiązaniu.
+ * Kolejność pracy:
+ * <ol>
+ * <li>{@code pl.sages.jext.ch5.threads.StructuredTasks} (src/main/java/pl/sages/jext/ch5/threads/StructuredTasks.java)</li>
+ * <li>{@code pl.sages.jext.ch5.threads.Services} (src/main/java/pl/sages/jext/ch5/threads/Services.java)</li>
+ * </ol>
+ */
 @DisplayName("Ćw. 10: zadania równolegle na wątkach wirtualnych i ScopedValue")
-class StructuredTasksTest {
+class Zad10StructuredTasksTest {
 
     @Test
     @DisplayName("a) profil pobrany równolegle (ok. 300 ms, nie 600)")

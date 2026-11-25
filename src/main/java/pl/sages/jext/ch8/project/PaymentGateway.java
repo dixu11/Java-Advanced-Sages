@@ -5,6 +5,8 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
+ * Ćwiczenie 13. Sprawdzenie: test {@code Zad13MiniShopTest}.
+ *
  * Gotowa zaślepka zewnętrznego API do etapu c. Zadanie: wywołuj ją z MiniShop.process
  * tylko dla zaakceptowanych zamówień. Ograniczenie i finally należą do ćwiczenia.
  * Nie łączymy się z prawdziwą bramką. Domyślnie jedna płatność trwa 50 ms, limit to 20.
