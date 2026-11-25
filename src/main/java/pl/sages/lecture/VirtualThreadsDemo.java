@@ -2,6 +2,7 @@ package pl.sages.lecture;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -65,7 +66,7 @@ public class VirtualThreadsDemo {
     static void step4_executorPerTask() {
         AtomicInteger sent = new AtomicInteger();
         Instant start = Instant.now();
-        try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
+        try (ExecutorService executor = Executors.newVirtualThreadPerTaskExecutor()) {
             for (int i = 0; i < 1000; i++) {
                 executor.submit(() -> {
                     sleep(200);                           // wysłanie jednego SMS trwa 200 ms
@@ -82,7 +83,7 @@ public class VirtualThreadsDemo {
         AtomicInteger inGateway = new AtomicInteger();
         AtomicInteger maxSeen = new AtomicInteger();
         Instant start = Instant.now();
-        try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
+        try (ExecutorService executor = Executors.newVirtualThreadPerTaskExecutor()) {
             for (int i = 0; i < 100; i++) {
                 executor.submit(() -> {
                     gateway.acquire();                    // czekam na wolne miejsce w bramce
